@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="no" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#162e51" />
+<meta name="color-scheme" content="light dark" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="googlebot" content="index, follow" />
+<meta name="author" content="ForSec AS" />
+<meta name="keywords" content="cybersikkerhet, blue team, CERT, SOC, deteksjon, hendelsesrespons, forensikk, pentest, herding, Sigma, YARA, KQL, MITRE ATT&CK, Norge, Grimstad" />
+<meta name="description" content="ForSec – Blue team-spesialister i Norge med 16+ års CERT/SOC-erfaring. Deteksjonsutvikling, hendelsesrespons, forensikk, penetrasjonstesting og herding. Microsoft Partner og FIRST.org Liaison." />
+
+<title>ForSec – Operativ cybersikkerhet | Blue team, CERT/SOC, hendelsesrespons</title>
+
+<link rel="canonical" href="https://forsec.no/" />
+<link rel="alternate" hreflang="no" href="https://forsec.no/" />
+<link rel="alternate" hreflang="en" href="https://forsec.no/?lang=en" />
+<link rel="alternate" hreflang="x-default" href="https://forsec.no/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ForSec" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:url" content="https://forsec.no/" />
+<meta property="og:title" content="ForSec – Vi forsvarer dine systemer" />
+<meta property="og:description" content="Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter." />
+<meta property="og:image" content="https://forsec.no/forsec-logo.png" />
+<meta property="og:image:alt" content="ForSec logo" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ForSec – Vi forsvarer dine systemer" />
+<meta name="twitter:description" content="Blue team-spesialister med 16+ års CERT/SOC-erfaring." />
+<meta name="twitter:image" content="https://forsec.no/forsec-logo.png" />
+
+<link rel="icon" type="image/png" href="forsec-logo.png" />
+<link rel="apple-touch-icon" href="forsec-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<!-- JSON-LD: Organization + LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://forsec.no/#org",
+      "name": "ForSec AS",
+      "url": "https://forsec.no/",
+      "logo": "https://forsec.no/forsec-logo.png",
+      "email": "contact@forsec.no",
+      "telephone": "+47 99 22 06 77",
+      "vatID": "NO931208306",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Terje Løvås vei 1",
+        "postalCode": "4879",
+        "addressLocality": "Grimstad",
+        "addressCountry": "NO"
+      },
+      "sameAs": ["https://www.first.org/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://forsec.no/#website",
+      "url": "https://forsec.no/",
+      "name": "ForSec",
+      "inLanguage": ["nb-NO","en"],
+      "publisher": { "@id": "https://forsec.no/#org" }
+    },
+    {
+      "@type": "ProfessionalService",
+      "name": "ForSec – Blue team cybersikkerhet",
+      "image": "https://forsec.no/forsec-logo.png",
+      "description": "Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, hendelsesrespons, forensikk, herding og penetrasjonstesting.",
+      "areaServed": "NO",
+      "priceRange": "$$",
+      "telephone": "+47 99 22 06 77",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Terje Løvås vei 1",
+        "postalCode": "4879",
+        "addressLocality": "Grimstad",
+        "addressCountry": "NO"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"Hvordan kommer vi i gang med en sikkerhetsvurdering?","acceptedAnswer":{"@type":"Answer","text":"Vi starter med en kort kartleggingssamtale, definerer scope og leverer en gjennomgang av nåværende sikkerhetstilstand med konkrete tiltak."}},
+        {"@type":"Question","name":"Hva koster sikkerhetstjenester, og hvordan prises de?","acceptedAnswer":{"@type":"Answer","text":"Engangsvurderinger fra 45 000 kr, retainer fra 25 000 kr/mnd. Endelig pris avhenger av miljø og scope."}},
+        {"@type":"Question","name":"Vi har aldri hatt en sikkerhetsgjennomgang — er det for sent?","acceptedAnswer":{"@type":"Answer","text":"Nei. Vi har hjulpet virksomheter i alle modenhetsnivåer. Det viktigste er å starte med en realistisk basislinje."}},
+        {"@type":"Question","name":"Hva innebærer deteksjonsutvikling egentlig?","acceptedAnswer":{"@type":"Answer","text":"Skreddersydde regler i Sigma/YARA/KQL/SPL, MITRE ATT&CK-mapping og kontinuerlig tuning for å redusere falske positiver."}},
+        {"@type":"Question","name":"Hva gjør vi hvis vi opplever et sikkerhetsbrudd?","acceptedAnswer":{"@type":"Answer","text":"Kontakt vakttelefonen. Vi starter triage, isolerer, samler bevis og koordinerer hendelsen til normalisering."}},
+        {"@type":"Question","name":"Hva skiller ForSec fra andre sikkerhetsselskaper?","acceptedAnswer":{"@type":"Answer","text":"Operatører, ikke konsulenter. 16+ års CERT/SOC-erfaring og leveranser som faktisk integreres i ditt team."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Hopp til hovedinnhold</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="ForSec hjem">
+      <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" fetchpriority="high" />
+    </a>
+
+    <nav class="main-nav" aria-label="Hovedmeny">
+      <a href="#top"        class="nav-link active" data-i18n="nav.home">Hjem</a>
+      <a href="tjenester.html" class="nav-link"     data-i18n="nav.services">Tjenester</a>
+      <a href="#om"         class="nav-link"        data-i18n="nav.about">Om oss</a>
+      <a href="#blogg"      class="nav-link"        data-i18n="nav.blog">Blogg</a>
+      <a href="#kontakt"    class="nav-link"        data-i18n="nav.contact">Kontakt</a>
+    </nav>
+
+    <div class="header-utils">
+      <button class="theme-toggle" id="themeToggle" aria-label="Bytt tema">
+        <span class="icon-wrap">
+          <svg class="icon icon-sun"  viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M12 2.5v2.7M12 18.8v2.7M2.5 12h2.7M18.8 12h2.7M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M4.9 19.1l1.9-1.9M17.2 6.8l1.9-1.9"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Språk">
+        <button class="lang-btn active" data-lang="no">NO</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn"        data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#kontakt" data-i18n="nav.cta">Ta kontakt →</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="container hero-inner">
+    <h1 class="hero-title" id="hero-title">
+      <span data-i18n="hero.title.prefix">Vi forsvarer</span><br/>
+      <span class="rotator" id="heroRotator" aria-live="polite">din organisasjon.</span>
+    </h1>
+    <p class="hero-lede" data-i18n="hero.lede">
+      Blue team-spesialister med 16+ års erfaring fra norsk CERT/SOC-drift. Vi bygger deteksjon,
+      håndterer hendelser og herder infrastruktur — som en forlengelse av teamet ditt, ikke
+      konsulenter med rapporter.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#tjenester" data-i18n="hero.cta1">Se våre tjenester →</a>
+      <a class="btn btn-ghost"   href="#om"        data-i18n="hero.cta2">Om ForSec</a>
+    </div>
+
+    <ul class="hero-stats">
+      <li><strong>16+</strong><span data-i18n="hero.stat1">ÅRS ERFARING</span></li>
+      <li><strong>12+</strong><span data-i18n="hero.stat2">ÅR MED CERT/SOC</span></li>
+      <li><strong>4</strong><span   data-i18n="hero.stat3">SOC-MILJØER BYGGET</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ WHO WE ARE ============ -->
+<section class="section section-light" id="om">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="who.eyebrow">— HVEM VI ER —</span>
+      <h2 data-i18n="who.title">Eksperter, ikke bare konsulenter</h2>
+      <p class="lede" data-i18n="who.lede">16+ års hands-on erfaring fra norsk CERT/SOC-drift. Vi bygger deteksjoner, etterforsker hendelser og herder infrastruktur.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="service-card reveal">
+        <div class="card-num">01</div>
+        <h3 data-i18n="who.c1.title">Deteksjon og trusseljakt</h3>
+        <p data-i18n="who.c1.body">Vi skriver deteksjonsregler, tuner SIEM-plattformer og jakter på trusler i ditt miljø med Sigma, YARA og KQL.</p>
+        <ul class="chips"><li>Sigma</li><li>YARA</li><li>KQL</li><li data-i18n="who.c1.chip">Detection as code</li></ul>
+        <a class="card-link" href="#tjenester" data-i18n="common.readmore">Les mer →</a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="card-num">02</div>
+        <h3 data-i18n="who.c2.title">Forensikk og hendelsesrespons</h3>
+        <p data-i18n="who.c2.body">Når hendelsen inntreffer, er vi der. Disk-, minne- og nettverksforensikk med bevissinnhenting som holder i retten.</p>
+        <ul class="chips"><li>DFIR</li><li>Memory</li><li>Network</li><li data-i18n="who.c2.chip">Court grade</li></ul>
+        <a class="card-link" href="#tjenester" data-i18n="common.readmore">Les mer →</a>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="card-num">03</div>
+        <h3 data-i18n="who.c3.title">Herding og sikkerhetstesting</h3>
+        <p data-i18n="who.c3.body">Systematisk herding av servere, AD og sky. Penetrasjonstesting og purple teaming for å finne og lukke hull.</p>
+        <ul class="chips"><li data-i18n="who.c3.chip1">Hardening</li><li>Pentest</li><li data-i18n="who.c3.chip2">Purple team</li><li>Azure/AD</li></ul>
+        <a class="card-link" href="#tjenester" data-i18n="common.readmore">Les mer →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CORE COMPETENCE ============ -->
+<section class="section section-tint" id="tjenester">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="core.eyebrow">— KJERNEKOMPETANSE —</span>
+      <h2 data-i18n="core.title">Blue team sikkerhetsoperasjoner</h2>
+      <p class="lede" data-i18n="core.lede">Tre forsvarspilarer — bygget av operatører som har gjort dette på ordentlig.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="service-card pillar-card reveal">
+        <div class="card-num lg">01</div>
+        <h3 data-i18n="core.c1.title">Deteksjonsutvikling</h3>
+        <p data-i18n="core.c1.body">Skreddersydde deteksjonsregler i Sigma, YARA, KQL og SPL. SIEM-tuning, trusseljakt og detection-as-code som fanger reelle trusler — ikke bare støy.</p>
+        <ul class="check-list">
+          <li data-i18n="core.c1.l1">Microsoft Sentinel / Splunk / Elastic</li>
+          <li data-i18n="core.c1.l2">Detection engineering med Git workflows</li>
+          <li data-i18n="core.c1.l3">MITRE ATT&CK mapping per regel</li>
+        </ul>
+        <a class="card-link" href="#kontakt" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
+      </article>
+
+      <article class="service-card pillar-card reveal">
+        <div class="card-num lg">02</div>
+        <h3 data-i18n="core.c2.title">Hendelsesrespons og forensikk</h3>
+        <p data-i18n="core.c2.body">Fra første alarm til ferdig rapport. Disk- og minneforensikk, skadevareanalyse, bevissikring og responsavtaler for når minuttene teller.</p>
+        <ul class="check-list">
+          <li data-i18n="core.c2.l1">Garantert responstid på retainer</li>
+          <li data-i18n="core.c2.l2">Volatility, FTK, EnCase, Velociraptor</li>
+          <li data-i18n="core.c2.l3">Rapporter som holder i rett</li>
+        </ul>
+        <a class="card-link" href="#kontakt" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
+      </article>
+
+      <article class="service-card pillar-card reveal">
+        <div class="card-num lg">03</div>
+        <h3 data-i18n="core.c3.title">Herding og vurderinger</h3>
+        <p data-i18n="core.c3.body">Penetrasjonstesting, AD-sikkerhetsgjennomgang, sky-sikkerhetsvurdering og systematisk herding. Vi finner hullene og hjelper deg å tette dem.</p>
+        <ul class="check-list">
+          <li data-i18n="core.c3.l1">CIS-benchmarks og NSMs grunnprinsipper</li>
+          <li data-i18n="core.c3.l2">Azure / AWS / GCP sikkerhetsvurdering</li>
+          <li data-i18n="core.c3.l3">Purple team-øvelser</li>
+        </ul>
+        <a class="card-link" href="#kontakt" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="partners.eyebrow">— PÅLITELIGE PARTNERSKAP —</span>
+      <h2 data-i18n="partners.title">Anerkjent av bransjeledere</h2>
+      <p class="lede" data-i18n="partners.lede">Strategiske partnerskap som styrker våre sikkerhetskapabiliteter.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <article class="partner-card reveal">
+        <header class="partner-head">
+          <img class="partner-logo" src="microsoft-partner.webp" alt="Microsoft Partner logo" width="72" height="72" loading="lazy" decoding="async" />
+          <h3 data-i18n="partners.p1.title">Microsoft Partner</h3>
+        </header>
+        <p data-i18n="partners.p1.body">Beskyttelse på bedriftsnivå med Microsofts skyteknologier og sikkerhetsløsninger.</p>
+        <ul class="check-list">
+          <li data-i18n="partners.p1.l1">Azure sikkerhetsarkitektur og implementering</li>
+          <li data-i18n="partners.p1.l2">Microsoft Defender for Cloud ekspertise</li>
+          <li data-i18n="partners.p1.l3">Sentinel SIEM/SOAR-integrasjon</li>
+          <li data-i18n="partners.p1.l4">Microsoft 365 sikkerhetsoptimalisering</li>
+        </ul>
+      </article>
+
+      <article class="partner-card reveal">
+        <header class="partner-head">
+          <img class="partner-logo" src="first-org.webp" alt="FIRST.org Liaison logo" width="72" height="72" loading="lazy" decoding="async" />
+          <h3 data-i18n="partners.p2.title">FIRST.org Liaison</h3>
+        </header>
+        <p data-i18n="partners.p2.body">Direkte tilknytning til det globale hendelsesresponssamfunnet gjennom FIRST.org-medlemskap.</p>
+        <ul class="check-list">
+          <li data-i18n="partners.p2.l1">Global deling av trusselinformasjon</li>
+          <li data-i18n="partners.p2.l2">Direkte tilknytning til internasjonale sikkerhetsteam</li>
+          <li data-i18n="partners.p2.l3">Tidlig varslingssystem for nye trusler</li>
+          <li data-i18n="partners.p2.l4">Tilgang til hendelsesrespons playbooks og metodikker</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="ind.eyebrow">— BRANSJER —</span>
+      <h2 data-i18n="ind.title">Vi forsvarer organisasjoner på tvers av sektorer</h2>
+      <p class="lede" data-i18n="ind.lede">Hver bransje har unike trusselbilder. Vi bringer operatør-nivå blue team-ekspertise tilpasset din sektor.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <article class="industry-card reveal">
+        <div class="industry-icon">$</div>
+        <h3 data-i18n="ind.i1.title">Finans og bank</h3>
+        <p data-i18n="ind.i1.body">Finansinstitusjoner møter sofistikerte trusselaktører som retter seg mot transaksjoner og kundedata.</p>
+        <ul>
+          <li data-i18n="ind.i1.l1">Deteksjonsregler for finanssvindel og innsidertrusler</li>
+          <li data-i18n="ind.i1.l2">Hendelsesrespons for betalingssystemer og handelsplattformer</li>
+          <li data-i18n="ind.i1.l3">Penetrasjonstesting mot SWIFT, DORA og PCI DSS-omfang</li>
+        </ul>
+      </article>
+
+      <article class="industry-card reveal">
+        <div class="industry-icon">+</div>
+        <h3 data-i18n="ind.i2.title">Helse og omsorg</h3>
+        <p data-i18n="ind.i2.body">Helsedata er hovedmål. Vi beskytter systemene klinikere er avhengige av daglig.</p>
+        <ul>
+          <li data-i18n="ind.i2.l1">Trusseldeteksjon på tvers av kliniske nettverk og Normen</li>
+          <li data-i18n="ind.i2.l2">Hendelsesrespons for pasientjournalsystemer</li>
+          <li data-i18n="ind.i2.l3">Herding av medisinsk utstyrsnettverk og IoT</li>
+        </ul>
+      </article>
+
+      <article class="industry-card reveal">
+        <div class="industry-icon">⚑</div>
+        <h3 data-i18n="ind.i3.title">Offentlig sektor</h3>
+        <p data-i18n="ind.i3.body">Vi bygde ekspertisen vår inne i norsk offentlig sektor CERT/SOC — vi kjenner dette domenet.</p>
+        <ul>
+          <li data-i18n="ind.i3.l1">Deteksjonsutvikling i tråd med NSMs grunnprinsipper</li>
+          <li data-i18n="ind.i3.l2">Hendelsesrespons og forensikk for offentlig infrastruktur</li>
+          <li data-i18n="ind.i3.l3">Herding mot statlige og APT-trusler</li>
+        </ul>
+      </article>
+
+      <article class="industry-card reveal">
+        <div class="industry-icon">&lt;/&gt;</div>
+        <h3 data-i18n="ind.i4.title">Teknologi og SaaS</h3>
+        <p data-i18n="ind.i4.body">Hurtigvoksende teknologiselskaper trenger sikkerhet som holder tritt med utviklingen.</p>
+        <ul>
+          <li data-i18n="ind.i4.l1">Sky-sikkerhetsvurderinger (Azure, AWS, GCP)</li>
+          <li data-i18n="ind.i4.l2">Container- og Kubernetes-herding</li>
+          <li data-i18n="ind.i4.l3">Purple teaming for SaaS-plattformer og API-er</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section-light">
+  <div class="container container-narrow">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="faq.eyebrow">— OFTEST STILTE SPØRSMÅL —</span>
+      <h2 data-i18n="faq.title">Vanlige spørsmål om IT-sikkerhet</h2>
+      <p class="lede" data-i18n="faq.lede">Svar på det norske virksomheter lurer på om cybersikkerhet og våre tjenester.</p>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item reveal">
+        <summary><span class="faq-question" data-i18n="faq.q1">Hvordan kommer vi i gang med en sikkerhetsvurdering?</span><span class="chevron">▾</span></summary>
+        <div class="faq-body" data-i18n="faq.a1">Vi starter med en kort kartleggingssamtale, definerer scope og leverer en gjennomgang av nåværende sikkerhetstilstand med konkrete tiltak.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-question" data-i18n="faq.q2">Hva koster sikkerhetstjenester, og hvordan prises de?</span><span class="chevron">▾</span></summary>
+        <div class="faq-body" data-i18n="faq.a2">Engangsvurderinger fra 45 000 kr, retainer fra 25 000 kr/mnd. Endelig pris avhenger av miljø og scope.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-question" data-i18n="faq.q3">Vi har aldri hatt en sikkerhetsgjennomgang — er det for sent?</span><span class="chevron">▾</span></summary>
+        <div class="faq-body" data-i18n="faq.a3">Nei. Vi har hjulpet virksomheter i alle modenhetsnivåer. Det viktigste er å starte med en realistisk basislinje.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-question" data-i18n="faq.q4">Hva innebærer deteksjonsutvikling egentlig?</span><span class="chevron">▾</span></summary>
+        <div class="faq-body" data-i18n="faq.a4">Skreddersydde regler i Sigma/YARA/KQL/SPL, MITRE ATT&CK-mapping og kontinuerlig tuning for å redusere falske positiver.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-question" data-i18n="faq.q5">Hva gjør vi hvis vi opplever et sikkerhetsbrudd?</span><span class="chevron">▾</span></summary>
+        <div class="faq-body" data-i18n="faq.a5">Kontakt vakttelefonen. Vi starter triage, isolerer, samler bevis og koordinerer hendelsen til normalisering.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary><span class="faq-question" data-i18n="faq.q6">Hva skiller ForSec fra andre sikkerhetsselskaper?</span><span class="chevron">▾</span></summary>
+        <div class="faq-body" data-i18n="faq.a6">Operatører, ikke konsulenter. 16+ års CERT/SOC-erfaring og leveranser som faktisk integreres i ditt team.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<section class="section section-tint" id="blogg">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <span class="eyebrow" data-i18n="blog.eyebrow">— SISTE FRA BLOGGEN —</span>
+        <h2 data-i18n="blog.title">Innsikt og rådgivning</h2>
+      </div>
+      <a class="link" href="#blogg" data-i18n="blog.all">Se alle artikler →</a>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="blog-card reveal">
+        <div class="blog-cover"><span class="blog-tag">NIS2</span></div>
+        <div class="blog-meta"><span data-i18n="blog.b1.date">15. FEB</span><span>•</span><span data-i18n="blog.b1.read">5 min lesetid</span></div>
+        <h3 data-i18n="blog.b1.title">NIS2-direktivet: Hva norske virksomheter må vite i 2026</h3>
+        <p data-i18n="blog.b1.body">NIS2 stiller strengere krav til cybersikkerhet for kritisk infrastruktur. Her er hva din virksomhet må gjøre for å bli compliant.</p>
+        <ul class="chips small"><li>NIS2</li><li>Compliance</li></ul>
+        <a class="card-link" href="#">→</a>
+      </article>
+
+      <article class="blog-card reveal">
+        <div class="blog-cover"><span class="blog-tag">Ransomware</span></div>
+        <div class="blog-meta"><span data-i18n="blog.b2.date">28. FEB</span><span>•</span><span data-i18n="blog.b2.read">6 min lesetid</span></div>
+        <h3 data-i18n="blog.b2.title">Ransomware-trender i Norge: Slik beskytter du virksomheten</h3>
+        <p data-i18n="blog.b2.body">Ransomware-angrep mot norske virksomheter øker. Lær om de nyeste trendene og konkrete tiltak for å beskytte din organisasjon.</p>
+        <ul class="chips small"><li>Ransomware</li><li data-i18n="blog.b2.tag">Sikkerhet</li></ul>
+        <a class="card-link" href="#">→</a>
+      </article>
+
+      <article class="blog-card reveal">
+        <div class="blog-cover"><span class="blog-tag" data-i18n="blog.b3.tag">Hendelsesrespons</span></div>
+        <div class="blog-meta"><span data-i18n="blog.b3.date">1. MARS</span><span>•</span><span data-i18n="blog.b3.read">7 min lesetid</span></div>
+        <h3 data-i18n="blog.b3.title">Slik bygger du en hendelsesresponsplan som faktisk fungerer</h3>
+        <p data-i18n="blog.b3.body">En hendelsesresponsplan er verdiløs hvis ingen vet hvordan den brukes. Her er en praktisk guide til å bygge en plan som virker under press.</p>
+        <ul class="chips small"><li data-i18n="blog.b3.chip1">Hendelsesrespons</li><li data-i18n="blog.b3.chip2">Planlegging</li></ul>
+        <a class="card-link" href="#">→</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-section" id="kontakt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow light" data-i18n="cta.eyebrow">— TA KONTAKT —</span>
+      <h2 class="light" data-i18n="cta.title">Klar for sterkere forsvar?</h2>
+      <p class="lede light" data-i18n="cta.lede">La oss diskutere hvordan vi kan hjelpe å sikre din organisasjon. Innledende samtale er alltid uforpliktende.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary"       href="mailto:contact@forsec.no" data-i18n="cta.btn1">📞 Ta kontakt →</a>
+      <a class="btn btn-outline-light" href="tel:+4799220677">📞 +47 99 22 06 77</a>
+    </div>
+    <ul class="trust-row">
+      <li data-i18n="cta.t1">★ FIRST.ORG MEDLEM</li>
+      <li data-i18n="cta.t2">★ MICROSOFT PARTNER</li>
+      <li data-i18n="cta.t3">★ BASERT I NORGE</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" fetchpriority="high" />
+        </a>
+        <span class="footer-tag" data-i18n="footer.tag">OPERATIV CYBERSIKKERHET</span>
+        <p data-i18n="footer.body">Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.</p>
+        <div class="status-pill"><span class="dot"></span><span data-i18n="footer.status">SOC OPERATIVT &nbsp;/&nbsp; 24/7</span></div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.h1">SELSKAP</h4>
+        <ul>
+          <li><a href="#om"      data-i18n="footer.about">Om oss</a></li>
+          <li><a href="#kontakt" data-i18n="footer.contact">Kontakt</a></li>
+          <li><a href="#"        data-i18n="footer.career">Karriere</a></li>
+          <li><a href="#"        data-i18n="footer.privacy">Personvern</a></li>
+          <li><a href="#"        data-i18n="footer.terms">Vilkår</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.h2">TJENESTER</h4>
+        <ul>
+          <li><a href="#tjenester" data-i18n="footer.s1">Deteksjonsutvikling</a></li>
+          <li><a href="#tjenester" data-i18n="footer.s2">Hendelsesrespons</a></li>
+          <li><a href="#tjenester" data-i18n="footer.s3">Forensikk</a></li>
+          <li><a href="#tjenester" data-i18n="footer.s4">Penetrasjonstesting</a></li>
+          <li><a href="#tjenester" data-i18n="footer.s5">Herding og vurdering</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.h3">KONTAKT</h4>
+        <ul class="contact-list">
+          <li><span class="ci">📞</span><a href="tel:+4799220677">+47 99 22 06 77</a></li>
+          <li><span class="ci">✉</span><a href="mailto:contact@forsec.no">contact@forsec.no</a></li>
+          <li><span class="ci">📍</span><span data-i18n="footer.addr">Terje Løvås vei 1<br/>4879 Grimstad, Norge</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2026 ForSec AS — Alle rettigheter reservert</span>
+      <span data-i18n="footer.orgnr">Org.nr: 931 208 306</span>
+      <div class="footer-lang">
+        <button class="lang-btn active" data-lang="no" data-i18n="footer.lang.no">NORSK</button>
+        <button class="lang-btn"        data-lang="en" data-i18n="footer.lang.en">ENGLISH</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

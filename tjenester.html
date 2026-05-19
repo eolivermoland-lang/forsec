@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="no" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#162e51" />
+<meta name="color-scheme" content="light dark" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="ForSec AS" />
+<meta name="keywords" content="cybersikkerhet tjenester, deteksjonsutvikling, hendelsesrespons, forensikk, penetrasjonstesting, purple teaming, herding, tabletop, CIS-benchmarks, MITRE ATT&CK, Sigma, YARA, KQL, Norge" />
+<meta name="description" content="ForSec tjenester – deteksjonsutvikling, hendelsesrespons, forensikk, penetrasjonstesting, purple teaming, herding (on-prem og sky) og tabletop-øvelser. Operativ blue team-leveranse i Norge." />
+
+<title>Tjenester – ForSec | Deteksjon, hendelsesrespons, forensikk, pentest</title>
+
+<link rel="canonical" href="https://forsec.no/tjenester.html" />
+<link rel="alternate" hreflang="no" href="https://forsec.no/tjenester.html" />
+<link rel="alternate" hreflang="en" href="https://forsec.no/tjenester.html?lang=en" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ForSec" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:url" content="https://forsec.no/tjenester.html" />
+<meta property="og:title" content="Tjenester – ForSec" />
+<meta property="og:description" content="Deteksjon, respons, forensikk, pentest, purple team, herding og tabletop. Bygget av operatører." />
+<meta property="og:image" content="https://forsec.no/forsec-logo.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" href="forsec-logo.png" />
+<link rel="apple-touch-icon" href="forsec-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Hjem","item":"https://forsec.no/"},
+        {"@type":"ListItem","position":2,"name":"Tjenester","item":"https://forsec.no/tjenester.html"}
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Deteksjonsutvikling",
+      "provider": {"@type":"Organization","name":"ForSec AS","url":"https://forsec.no/"},
+      "areaServed": "NO",
+      "description": "Strukturert utvikling og forvaltning av deteksjonsregler i SIEM (Sigma/YARA/KQL). MITRE ATT&CK-mapping og detection-as-code."
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Hendelsesrespons og forensikk",
+      "provider": {"@type":"Organization","name":"ForSec AS","url":"https://forsec.no/"},
+      "areaServed": "NO",
+      "description": "Disk-, minne- og nettverksforensikk. Bevissinnhenting og rapporter for ledelse, forsikring og politi."
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Penetrasjonstesting",
+      "provider": {"@type":"Organization","name":"ForSec AS","url":"https://forsec.no/"},
+      "areaServed": "NO",
+      "description": "Sårbarhetsskanning, pentest av webapp/API, AD-vurdering og sky-gjennomgang (Azure/AWS/GCP)."
+    }
+  ]
+}
+</script>
+</head>
+<body class="page-services">
+
+<a class="skip-link" href="#main">Hopp til hovedinnhold</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="ForSec hjem">
+      <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" fetchpriority="high" />
+    </a>
+    <nav class="main-nav" aria-label="Hovedmeny">
+      <a href="index.html"       class="nav-link"        data-i18n="nav.home">Hjem</a>
+      <a href="tjenester.html"   class="nav-link active" data-i18n="nav.services">Tjenester</a>
+      <a href="index.html#om"    class="nav-link"        data-i18n="nav.about">Om oss</a>
+      <a href="index.html#blogg" class="nav-link"        data-i18n="nav.blog">Blogg</a>
+      <a href="index.html#kontakt" class="nav-link"      data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="header-utils">
+      <button class="theme-toggle" id="themeToggle" aria-label="Bytt tema">
+        <span class="icon-wrap">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M12 2.5v2.7M12 18.8v2.7M2.5 12h2.7M18.8 12h2.7M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M4.9 19.1l1.9-1.9M17.2 6.8l1.9-1.9"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Språk">
+        <button class="lang-btn active" data-lang="no">NO</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn"        data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="index.html#kontakt" data-i18n="nav.cta">Ta kontakt →</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero hero-sub" aria-labelledby="svc-hero">
+  <div class="container hero-inner">
+    <span class="eyebrow light" data-i18n="svc.eyebrow">— VÅRE TJENESTER —</span>
+    <h1 class="hero-title" id="svc-hero" data-i18n="svc.title">Tjenester</h1>
+    <p class="hero-lede" data-i18n="svc.lede">
+      Teknisk sikkerhet fra operatører med 16+ års erfaring fra norsk CERT/SOC-drift.<br/>
+      Vi bygger, detekterer, responderer og herder.
+    </p>
+  </div>
+</section>
+
+<!-- ============ TOP 3 PILLARS ============ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="grid grid-3">
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        </div>
+        <h2 data-i18n="svc.p1.title">Blue Team & Deteksjonsutvikling</h2>
+        <p data-i18n="svc.p1.body">Vi bygger deteksjonskapabiliteter som faktisk fanger reelle trusler. Fra Sigma- og YARA-regler til fullstendige detection-as-code-pipelines — vi designer, implementerer og tuner deteksjonslogikk tilpasset ditt miljø.</p>
+        <p class="svc-target"><em data-i18n="svc.p1.target">For SOC-team og virksomheter som vil bygge eller forbedre sine deteksjonsevner</em></p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Zm0 5 5 2v4c0 3.5-2.3 6.7-5 7.7-2.7-1-5-4.2-5-7.7V9l5-2Z"/></svg>
+        </div>
+        <h2 data-i18n="svc.p2.title">Digital etterforskning og hendelsesrespons</h2>
+        <p data-i18n="svc.p2.body">Når hendelsen inntreffer, teller minuttene. Vi gjennomfører disk-, minne- og nettverksforensikk, sikrer bevis og leverer rapporter som holder i retten. Vi tilbyr også retainer-avtaler for garantert responstid.</p>
+        <p class="svc-target"><em data-i18n="svc.p2.target">For virksomheter som opplever eller vil forberede seg på sikkerhetshendelser</em></p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3M4 11h16v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8Zm5 4h6"/></svg>
+        </div>
+        <h2 data-i18n="svc.p3.title">Sikkerhetstesting og sårbarhetsvurdering</h2>
+        <p data-i18n="svc.p3.body">Grundig teknisk testing av infrastruktur, applikasjoner og skyløsninger. Vi finner sårbarhetene før angripere gjør det — med konkrete funn og prioriterte anbefalinger.</p>
+        <p class="svc-target"><em data-i18n="svc.p3.target">For virksomheter som vil kjenne sine tekniske svakheter og lukke dem</em></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL CATALOG ============ -->
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="cat.eyebrow">— TJENESTEKATALOG —</span>
+      <h2 data-i18n="cat.title">Alle våre tjenester i detalj</h2>
+      <p class="lede" data-i18n="cat.lede">Konkrete leveranser, tydelig scope, og hvem hver tjeneste passer for.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <!-- 1 Deteksjonsutvikling -->
+      <article class="catalog-card reveal">
+        <div class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 6h16v3H4zM4 11h16v3H4zM4 16h10v3H4z"/></svg>
+        </div>
+        <h3 data-i18n="cat.s1.title">Deteksjonsutvikling</h3>
+        <p data-i18n="cat.s1.body">Strukturert utvikling og forvaltning av deteksjonsregler i din SIEM. Vi designer, koder, tester og dokumenterer regler — og setter opp prosessen for å forvalte dem over tid.</p>
+        <p class="svc-target"><em data-i18n="cat.s1.target">For SOC-team som vil heve deteksjonsmodenheten</em></p>
+        <div class="deliv-label" data-i18n="cat.deliv">LEVERANSER</div>
+        <ul class="check-list">
+          <li data-i18n="cat.s1.l1">Sigma/YARA/KQL-deteksjonsregler</li>
+          <li data-i18n="cat.s1.l2">SIEM-tuning og optimalisering</li>
+          <li data-i18n="cat.s1.l3">detection-as-code pipeline</li>
+          <li data-i18n="cat.s1.l4">trusseljaktrapporter</li>
+          <li data-i18n="cat.s1.l5">SOC-modenhetsvurdering</li>
+        </ul>
+      </article>
+
+      <!-- 2 IR -->
+      <article class="catalog-card highlight reveal">
+        <div class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="currentColor" d="M11 7h2v6h-2zM11 15h2v2h-2z"/></svg>
+        </div>
+        <h3 data-i18n="cat.s2.title">Hendelsesrespons og forensikk</h3>
+        <p data-i18n="cat.s2.body">Når en hendelse inntreffer leverer vi rask, strukturert respons. Vi gjennomfører digital etterforskning og leverer bevissikret rapport som tåler juridisk granskning.</p>
+        <p class="svc-target"><em data-i18n="cat.s2.target">For virksomheter som trenger akutt eller proaktiv responskapasitet</em></p>
+        <div class="deliv-label" data-i18n="cat.deliv">LEVERANSER</div>
+        <ul class="check-list">
+          <li data-i18n="cat.s2.l1">Forensisk analyse (disk/minne/nettverk)</li>
+          <li data-i18n="cat.s2.l2">bevissinnhenting og beviskjede</li>
+          <li data-i18n="cat.s2.l3">malware-analyse</li>
+          <li data-i18n="cat.s2.l4">hendelsesrapport for ledelse/forsikring/politi</li>
+          <li data-i18n="cat.s2.l5">retainer-avtale med SLA</li>
+        </ul>
+      </article>
+
+      <!-- 3 Pentest -->
+      <article class="catalog-card reveal">
+        <div class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m5 19 9-9m-4 0h4v4M9 4h11v11"/></svg>
+        </div>
+        <h3 data-i18n="cat.s3.title">Penetrasjonstesting</h3>
+        <p data-i18n="cat.s3.body">Reell testing av angrepsflaten din. Vi simulerer angripere mot infrastruktur, web-applikasjoner, APIer og sky for å avdekke konkrete sårbarheter — med tydelig prioritering.</p>
+        <p class="svc-target"><em data-i18n="cat.s3.target">For virksomheter som vil verifisere sikkerhetsnivået sitt</em></p>
+        <div class="deliv-label" data-i18n="cat.deliv">LEVERANSER</div>
+        <ul class="check-list">
+          <li data-i18n="cat.s3.l1">Sårbarhetsskanning (intern/ekstern)</li>
+          <li data-i18n="cat.s3.l2">penetrasjonstest av webapplikasjoner og APIer</li>
+          <li data-i18n="cat.s3.l3">Active Directory-sikkerhetsvurdering</li>
+          <li data-i18n="cat.s3.l4">sky-sikkerhetsgjennomgang (Azure/AWS/GCP)</li>
+        </ul>
+      </article>
+
+      <!-- 4 Purple teaming -->
+      <article class="catalog-card reveal">
+        <div class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 7h7v10H3zM14 7h7v10h-7z" opacity=".25"/><path fill="none" stroke="currentColor" stroke-width="2" d="M3 7h7v10H3zM14 7h7v10h-7z"/></svg>
+        </div>
+        <h3 data-i18n="cat.s4.title">Purple teaming</h3>
+        <p data-i18n="cat.s4.body">Samarbeid mellom angrep og forsvar i kontrollerte øvelser. Vi emulerer reelle trusselaktører basert på MITRE ATT&CK, tester deteksjonsdekningen din, og forbedrer forsvaret sammen med ditt team.</p>
+        <p class="svc-target"><em data-i18n="cat.s4.target">For modne sikkerhetsteam som vil teste og forbedre forsvaret sitt systematisk</em></p>
+        <div class="deliv-label" data-i18n="cat.deliv">LEVERANSER</div>
+        <ul class="check-list">
+          <li data-i18n="cat.s4.l1">MITRE ATT&CK-basert emulering</li>
+          <li data-i18n="cat.s4.l2">deteksjonsgapanalyse</li>
+          <li data-i18n="cat.s4.l3">angrepssimulering med sanntids blue team-tilbakemelding</li>
+          <li data-i18n="cat.s4.l4">måldrevet forbedringsplan</li>
+        </ul>
+      </article>
+
+      <!-- 5 Herding -->
+      <article class="catalog-card highlight reveal">
+        <div class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/></svg>
+        </div>
+        <h3 data-i18n="cat.s5.title">Herding — on-prem og sky</h3>
+        <p data-i18n="cat.s5.body">Systematisk herding av servere, nettverk, Active Directory og skyplattformer. Vi følger CIS-benchmarks og best practices for å redusere angrepsflaten — enten du kjører on-prem, hybrid eller full sky.</p>
+        <p class="svc-target"><em data-i18n="cat.s5.target">For virksomheter som vil redusere angrepsflaten i infrastrukturen sin</em></p>
+        <div class="deliv-label" data-i18n="cat.deliv">LEVERANSER</div>
+        <ul class="check-list">
+          <li data-i18n="cat.s5.l1">Windows/Linux-herding (CIS-benchmarks)</li>
+          <li data-i18n="cat.s5.l2">Active Directory-herding og tiering</li>
+          <li data-i18n="cat.s5.l3">Azure/M365-sikkerhetskonfigurasjon</li>
+          <li data-i18n="cat.s5.l4">nettverkssegmentering og zero trust</li>
+          <li data-i18n="cat.s5.l5">container- og Kubernetes-sikkerhet</li>
+        </ul>
+      </article>
+
+      <!-- 6 Tabletop -->
+      <article class="catalog-card reveal">
+        <div class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16v3H4zM6 10v9m12-9v9M9 14h6"/></svg>
+        </div>
+        <h3 data-i18n="cat.s6.title">Tabletop-øvelser og trening</h3>
+        <p data-i18n="cat.s6.body">Realistiske øvelsesscenarier som tester organisasjonens evne til å håndtere sikkerhetshendelser. Fra ransomware-scenarier for ledelsen til tekniske incident response-drills for SOC-teamet.</p>
+        <p class="svc-target"><em data-i18n="cat.s6.target">For ledelse, styre og sikkerhetsteam som vil øve på realistiske hendelser</em></p>
+        <div class="deliv-label" data-i18n="cat.deliv">LEVERANSER</div>
+        <ul class="check-list">
+          <li data-i18n="cat.s6.l1">Ransomware-scenario for ledelsen</li>
+          <li data-i18n="cat.s6.l2">teknisk IR-drill for sikkerhetsteam</li>
+          <li data-i18n="cat.s6.l3">krisehåndteringsøvelse</li>
+          <li data-i18n="cat.s6.l4">styrebriefing om cybersikkerhet</li>
+          <li data-i18n="cat.s6.l5">evalueringsrapport med forbedringstiltak</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="proc.eyebrow">— SLIK JOBBER VI —</span>
+      <h2 data-i18n="proc.title">Fra kartlegging til sikkerhet</h2>
+      <p class="lede" data-i18n="proc.lede">En strukturert prosess som gir resultater — uten å forstyrre din daglige drift.</p>
+    </div>
+
+    <ol class="process">
+      <li class="process-step reveal">
+        <span class="step-num">1</span>
+        <h3 data-i18n="proc.s1.title">Kartlegging</h3>
+        <p data-i18n="proc.s1.body">Vi starter med å forstå din virksomhet, systemer og risikoeksponering gjennom samtaler og teknisk gjennomgang.</p>
+      </li>
+      <li class="process-step reveal">
+        <span class="step-num">2</span>
+        <h3 data-i18n="proc.s2.title">Vurdering</h3>
+        <p data-i18n="proc.s2.body">Grundig analyse av sikkerhetsnivå med testing, sårbarhetsskanning og gjennomgang av arkitektur og rutiner.</p>
+      </li>
+      <li class="process-step reveal">
+        <span class="step-num">3</span>
+        <h3 data-i18n="proc.s3.title">Rapport og plan</h3>
+        <p data-i18n="proc.s3.body">Detaljert rapport med funn, risikorangering og en prioritert handlingsplan med konkrete tiltak.</p>
+      </li>
+      <li class="process-step reveal">
+        <span class="step-num">4</span>
+        <h3 data-i18n="proc.s4.title">Implementering</h3>
+        <p data-i18n="proc.s4.body">Vi hjelper med å implementere tiltakene — fra konfigurasjonsendringer til oppbygging av deteksjonskapabiliteter.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-section" id="kontakt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow light" data-i18n="cta.eyebrow">— TA KONTAKT —</span>
+      <h2 class="light" data-i18n="cta.title">Klar for sterkere forsvar?</h2>
+      <p class="lede light" data-i18n="cta.lede">La oss diskutere hvordan vi kan hjelpe å sikre din organisasjon. Innledende samtale er alltid uforpliktende.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="mailto:contact@forsec.no" data-i18n="cta.btn1">📞 Ta kontakt →</a>
+      <a class="btn btn-outline-light" href="tel:+4799220677">📞 +47 99 22 06 77</a>
+    </div>
+    <ul class="trust-row">
+      <li data-i18n="cta.t1">★ FIRST.ORG MEDLEM</li>
+      <li data-i18n="cta.t2">★ MICROSOFT PARTNER</li>
+      <li data-i18n="cta.t3">★ BASERT I NORGE</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" />
+        </a>
+        <span class="footer-tag" data-i18n="footer.tag">OPERATIV CYBERSIKKERHET</span>
+        <p data-i18n="footer.body">Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.</p>
+        <div class="status-pill"><span class="dot"></span><span data-i18n="footer.status">SOC OPERATIVT &nbsp;/&nbsp; 24/7</span></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h1">SELSKAP</h4>
+        <ul>
+          <li><a href="index.html#om"      data-i18n="footer.about">Om oss</a></li>
+          <li><a href="index.html#kontakt" data-i18n="footer.contact">Kontakt</a></li>
+          <li><a href="#"                  data-i18n="footer.career">Karriere</a></li>
+          <li><a href="#"                  data-i18n="footer.privacy">Personvern</a></li>
+          <li><a href="#"                  data-i18n="footer.terms">Vilkår</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h2">TJENESTER</h4>
+        <ul>
+          <li><a href="tjenester.html" data-i18n="footer.s1">Deteksjonsutvikling</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s2">Hendelsesrespons</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s3">Forensikk</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s4">Penetrasjonstesting</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s5">Herding og vurdering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h3">KONTAKT</h4>
+        <ul class="contact-list">
+          <li><span class="ci">📞</span><a href="tel:+4799220677">+47 99 22 06 77</a></li>
+          <li><span class="ci">✉</span><a href="mailto:contact@forsec.no">contact@forsec.no</a></li>
+          <li><span class="ci">📍</span><span data-i18n="footer.addr">Terje Løvås vei 1<br/>4879 Grimstad, Norge</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2026 ForSec AS — Alle rettigheter reservert</span>
+      <span data-i18n="footer.orgnr">Org.nr: 931 208 306</span>
+      <div class="footer-lang">
+        <button class="lang-btn active" data-lang="no" data-i18n="footer.lang.no">NORSK</button>
+        <button class="lang-btn"        data-lang="en" data-i18n="footer.lang.en">ENGLISH</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
