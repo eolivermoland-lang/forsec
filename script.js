@@ -1,7 +1,7 @@
 // ===================== i18n =====================
 const I18N = {
   no: {
-    'nav.home':'Hjem','nav.services':'Tjenester','nav.about':'Om oss','nav.blog':'Blogg','nav.contact':'Kontakt','nav.cta':'Ta kontakt →',
+    'nav.home':'Hjem','nav.services':'Tjenester','nav.about':'Om oss','nav.blog':'Blogg','nav.contact':'Kontakt','nav.cta':'Kundeportal',
 
     'hero.title':'Vi forsvarer<br/>dine systemer.',
     'hero.title.prefix':'Vi forsvarer',
@@ -87,10 +87,56 @@ const I18N = {
     'proc.s1.title':'Kartlegging','proc.s1.body':'Vi starter med å forstå din virksomhet, systemer og risikoeksponering gjennom samtaler og teknisk gjennomgang.',
     'proc.s2.title':'Vurdering','proc.s2.body':'Grundig analyse av sikkerhetsnivå med testing, sårbarhetsskanning og gjennomgang av arkitektur og rutiner.',
     'proc.s3.title':'Rapport og plan','proc.s3.body':'Detaljert rapport med funn, risikorangering og en prioritert handlingsplan med konkrete tiltak.',
-    'proc.s4.title':'Implementering','proc.s4.body':'Vi hjelper med å implementere tiltakene — fra konfigurasjonsendringer til oppbygging av deteksjonskapabiliteter.'
+    'proc.s4.title':'Implementering','proc.s4.body':'Vi hjelper med å implementere tiltakene — fra konfigurasjonsendringer til oppbygging av deteksjonskapabiliteter.',
+
+    'om.eyebrow':'— OM OSS —','om.title':'Om ForSec','om.lede':'Operatører som bygger forsvar. 16+ års hands-on CERT/SOC-erfaring fra norsk offentlig sektor — nå tilgjengelig for din organisasjon.',
+    'om.bg.eyebrow':'— VÅR BAKGRUNN —','om.bg.title':'Bygget av operatører',
+    'om.bg.p1':'ForSec vokste ut av reell drift. Teamet vårt har brukt over et tiår på å bygge og kjøre CERT/SOC-miljøer i norsk offentlig sektor — skrive deteksjonsregler, respondere på hendelser, gjennomføre forensikk og herde infrastruktur under aktive trusler.',
+    'om.bg.p2':'Vi startet ForSec fordi vi så for mange organisasjoner få generisk sikkerhetsråd fra konsulenter som aldri har sittet i en SOC. Vi bringer operatør-tankesett: praktisk, teknisk og kamp-testet.',
+    'om.stat1':'ÅRS ERFARING','om.stat2':'ÅR CERT/SOC','om.stat3':'SOC-MILJØER BYGGET',
+    'om.team.eyebrow':'— TEAMET —','om.team.title':'Operatørene bak ForSec','om.team.lede':'Folkene som faktisk gjør arbeidet — ikke et salgsteam.',
+    'om.team.kim.role':'Principal Security Lead','om.team.kim.bio':'16+ års CERT/SOC-erfaring fra norsk offentlig sektor. Detection engineering, hendelsesrespons og operativ blue team.',
+    'om.val.eyebrow':'— VÅRE VERDIER —','om.val.title':'Slik jobber vi','om.val.lede':'Prinsipp som styrer hver leveranse.',
+    'om.val.v1.title':'Operatør-tankesett','om.val.v1.body':'Vi har sittet i SOC-en under hendelser. Hver anbefaling tar utgangspunkt i hands-on erfaring, ikke teoretiske rammeverk.',
+    'om.val.v2.title':'Teknisk dybde','om.val.v2.body':'Vi skriver deteksjonsregler, analyserer malware og herder infrastruktur selv. Ingen sub-leveranse, ingen blackbox.',
+    'om.val.v3.title':'Ærlige vurderinger','om.val.v3.body':'Vi forteller deg hva sikkerhetstilstanden faktisk er — ikke hva som er behagelig å høre. Konkrete funn, prioriterte tiltak, null fluff.',
+
+    'bl.eyebrow':'— BLOGG —','bl.title':'Blogg','bl.lede':'Cybersikkerhets-innsikt, trender og veiledning for norske virksomheter.','bl.all':'Alle','bl.read':'Les mer →','bl.tag.regulation':'Regulering',
+    'bl.a1.title':'NIS2-direktivet: Hva norske virksomheter må vite i 2026','bl.a1.body':'NIS2 stiller strengere krav til cybersikkerhet for kritisk infrastruktur. Her er hva din virksomhet må gjøre for å bli compliant.',
+    'bl.a2.title':'Ransomware-trender i Norge: Slik beskytter du virksomheten','bl.a2.body':'Ransomware-angrep mot norske virksomheter øker. Lær om de nyeste trendene og konkrete tiltak for å beskytte din organisasjon.',
+    'bl.a3.title':'Slik bygger du en hendelsesresponsplan som faktisk fungerer','bl.a3.body':'En hendelsesresponsplan er verdiløs hvis ingen vet hvordan den brukes. Her er en praktisk guide til å bygge en plan som virker under press.',
+    'bl.a4.title':'Detection Engineering-workflow: Fra idé til produksjonsregel','bl.a4.body':'Skreddersydde deteksjonsregler krever struktur. Slik bygger du en pipeline fra idé til testet, dokumentert og deployet regel.',
+    'bl.a5.title':'KQL for sikkerhetsteam: En praktisk guide til trusseljakt','bl.a5.body':'Kusto Query Language er det kraftigste verktøyet i Sentinel-arsenalet. Her er praktiske KQL-spørringer du kan bruke til trusseljakt i dag.',
+    'bl.a6.title':'Azure-sikkerhetskonfigurasjon: De 10 vanligste feilene','bl.a6.body':'Vi ser de samme sikkerhetsfeilene i Azure-miljøer gang på gang. Her er de 10 vanligste — og hvordan du fikser dem.',
+    'bl.a7.title':'MITRE ATT&CK i praksis: Kartlegg deteksjonsdekningen din','bl.a7.body':'MITRE ATT&CK er mer enn et rammeverk — det er et kart over fiendtlig oppførsel. Slik bruker du det til å måle og forbedre deteksjon.',
+    'bl.a8.title':'Sikkerhetsovervåkning som prosess: Fra alarm til handling','bl.a8.body':'Verktøy alene gir ikke sikkerhet. Det er prosessene rundt dem som avgjør om alarmer blir handling eller bare støy.',
+    'bl.a9.title':'Entra ID og Conditional Access: Zero Trust-arkitektur i praksis','bl.a9.body':'Zero Trust er mer enn et buzzword. Med Entra ID og Conditional Access kan du implementere reell zero trust-sikkerhet — slik gjør du det.',
+    'bl.a10.title':'Microsoft Defender for Endpoint: XDR i praksis','bl.a10.body':'Endepunktbeskyttelse handler om mer enn antivirus. Slik bruker du Microsoft Defender for Endpoint som del av en helhetlig XDR-strategi.',
+    'bl.a11.title':'Active Directory-herding: Beskytt grunnmuren i IT-miljøet','bl.a11.body':'Active Directory er angriperens favorittmål. Slik herder du AD-miljøet for å stoppe lateral bevegelse og priviligert eskalering.',
+    'bl.a12.title':'Trusseletterretning i praksis: Fra data til beslutninger','bl.a12.body':'Threat intelligence er mer enn IOC-feeds. Slik gjør du trusselinformasjon om til konkrete beslutninger for sikkerhetsteamet ditt.',
+    'bl.a13.title':'Logg-strategi for Sentinel: Hva bør du samle inn?','bl.a13.body':'Å samle inn alt er dyrt og meningsløst. En god logg-strategi handler om å prioritere riktige kilder for deteksjon og etterforskning.',
+    'bl.a14.title':'Hendelseskommunikasjon: Slik briefer du ledelsen under et aktivt brudd','bl.a14.body':'Når hendelsen står på, må ledelsen ha klart språk. Slik strukturerer du briefings som gir riktige beslutninger raskt.',
+    'bl.a15.title':'E-postsikkerhet og phishing-forsvar: Defense in depth','bl.a15.body':'E-post er fortsatt angrepsvektor nummer én. Slik bygger du et lag-på-lag-forsvar som fanger phishing før det når brukerne — og håndterer det som slipper gjennom.',
+    'bl.a16.title':'SOC-automatisering med SOAR: Playbooks som skalerer teamet','bl.a16.body':'Sikkerhetsteam drukner i manuelle oppgaver. SOAR-playbooks i Sentinel automatiserer det repetitive, slik at analytikere kan fokusere på det som betyr noe.',
+
+    'kt.cta':'Send melding →','kt.eyebrow':'— KONTAKT —','kt.title':'Ta kontakt','kt.lede':'Fortell oss om dine sikkerhetsutfordringer. Vi svarer innen én virkedag.',
+    'kt.info.title':'Ta kontakt','kt.info.lede':'Klar for å diskutere sikkerhetsbehovene dine? Ta kontakt når som helst.',
+    'kt.phone':'Telefon','kt.email':'E-post','kt.loc':'Lokasjon','kt.addr':'Terje Løvås vei 1<br/>4879 Grimstad, Norge',
+    'kt.hours':'Respons','kt.hours.val':'Innen 1 virkedag · 24/7 retainer',
+    'kt.form.title':'Send oss en melding','kt.form.lede':'Fyll ut skjemaet og vi svarer innen én virkedag.',
+    'kt.f.name':'Navn *','kt.f.email':'E-post *','kt.f.company':'Selskap','kt.f.phone':'Telefon','kt.f.msg':'Melding *','kt.f.send':'Send melding →','kt.f.note':'Vi behandler henvendelser konfidensielt. Ingen markedsføringskontakt.',
+    'kt.meet.title':'Book et møte','kt.meet.body':'Planlegg en uforpliktende konsultasjon når det passer deg.',
+    'kt.mail.title':'Send oss en e-post','kt.mail.body':'For henvendelser og sikkerhetsdiskusjoner.',
+    'kt.ph.name':'Ditt fulle navn','kt.ph.email':'deg@selskap.no','kt.ph.company':'Selskapsnavn','kt.ph.phone':'+47','kt.ph.msg':'Fortell oss hva du trenger hjelp med...',
+    'aria.theme':'Bytt tema','aria.lang':'Språk','aria.nav':'Hovedmeny',
+
+    'login.title':'Logg inn','login.lede':'Tilgang til kundeportalen for ForSec-kunder.',
+    'login.email':'E-post','login.pass':'Passord','login.ph.email':'deg@selskap.no',
+    'login.remember':'Husk meg','login.forgot':'Glemt passord?','login.cta':'Logg inn',
+    'login.pending':'Innlogging er ikke aktiv ennå. Tilkobling kommer.','login.foot':'Trenger du tilgang? Kontakt din ForSec-rådgiver.','login.close':'Lukk'
   },
   en: {
-    'nav.home':'Home','nav.services':'Services','nav.about':'About','nav.blog':'Blog','nav.contact':'Contact','nav.cta':'Contact us →',
+    'nav.home':'Home','nav.services':'Services','nav.about':'About','nav.blog':'Blog','nav.contact':'Contact','nav.cta':'Customer Portal',
 
     'hero.title':'We defend<br/>your systems.',
     'hero.title.prefix':'We defend',
@@ -176,7 +222,53 @@ const I18N = {
     'proc.s1.title':'Discovery','proc.s1.body':'We start by understanding your business, systems and risk exposure through conversations and technical review.',
     'proc.s2.title':'Assessment','proc.s2.body':'Thorough analysis of security posture with testing, vulnerability scanning and review of architecture and routines.',
     'proc.s3.title':'Report and plan','proc.s3.body':'Detailed report with findings, risk ranking and a prioritized action plan with concrete measures.',
-    'proc.s4.title':'Implementation','proc.s4.body':'We help implement the actions — from configuration changes to building detection capabilities.'
+    'proc.s4.title':'Implementation','proc.s4.body':'We help implement the actions — from configuration changes to building detection capabilities.',
+
+    'om.eyebrow':'— ABOUT US —','om.title':'About ForSec','om.lede':'Operators who build defenses. 16+ years of hands-on CERT/SOC experience from Norwegian public sector — now available for your organization.',
+    'om.bg.eyebrow':'— OUR BACKGROUND —','om.bg.title':'Built by operators',
+    'om.bg.p1':'ForSec grew out of real operations. Our team spent over a decade building and running CERT/SOC environments in Norwegian public sector — writing detection rules, responding to incidents, performing forensics, and hardening infrastructure under live threat conditions.',
+    'om.bg.p2':'We started ForSec because we saw too many organizations getting generic security advice from consultants who had never sat in a SOC. We bring the operator mindset: practical, technical and battle-tested.',
+    'om.stat1':'YEARS EXPERIENCE','om.stat2':'YEARS CERT/SOC','om.stat3':'SOC ENVIRONMENTS BUILT',
+    'om.team.eyebrow':'— THE TEAM —','om.team.title':'The operators behind ForSec','om.team.lede':'The people who actually do the work — not a sales team.',
+    'om.team.kim.role':'Principal Security Lead','om.team.kim.bio':'16+ years CERT/SOC experience from Norwegian public sector. Detection engineering, incident response and operational blue team.',
+    'om.val.eyebrow':'— OUR VALUES —','om.val.title':'How we work','om.val.lede':'Principles that govern every delivery.',
+    'om.val.v1.title':'Operator Mindset','om.val.v1.body':'We have sat in the SOC during incidents. Every recommendation starts from hands-on experience, not theoretical frameworks.',
+    'om.val.v2.title':'Technical Depth','om.val.v2.body':'We write detection rules, analyze malware and harden infrastructure ourselves. No sub-delivery, no black box.',
+    'om.val.v3.title':'Honest Assessments','om.val.v3.body':'We tell you what the security posture actually looks like — not what is comfortable to hear. Concrete findings, prioritized actions, no fluff.',
+
+    'bl.eyebrow':'— BLOG —','bl.title':'Blog','bl.lede':'Cybersecurity insights, trends and guidance for Norwegian businesses.','bl.all':'All','bl.read':'Read more →','bl.tag.regulation':'Regulation',
+    'bl.a1.title':'NIS2 Directive: What Norwegian Businesses Need to Know in 2026','bl.a1.body':'NIS2 sets stricter cybersecurity requirements for critical infrastructure. Here is what your organization needs to do to become compliant.',
+    'bl.a2.title':'Ransomware Trends in Norway: How to Protect Your Organization','bl.a2.body':'Ransomware attacks on Norwegian businesses are increasing. Learn about the latest trends and concrete measures to protect your organization.',
+    'bl.a3.title':'How to Build an Incident Response Plan That Actually Works','bl.a3.body':'An incident response plan is worthless if nobody knows how to use it. Here is a practical guide to building a plan that works under pressure.',
+    'bl.a4.title':'Detection Engineering Workflow: From Idea to Production Rule','bl.a4.body':'Custom detection rules require structure. Here is how to build a pipeline from idea to tested, documented and deployed rule.',
+    'bl.a5.title':'KQL for Security Teams: A Practical Guide to Threat Hunting','bl.a5.body':'Kusto Query Language is the most powerful tool in the Sentinel arsenal. Here are practical KQL queries you can use for threat hunting today.',
+    'bl.a6.title':'Azure Security Configuration: The 10 Most Common Mistakes','bl.a6.body':'We see the same security mistakes in Azure environments time after time. Here are the 10 most common — and how to fix them.',
+    'bl.a7.title':'MITRE ATT&CK in Practice: Mapping Your Detection Coverage','bl.a7.body':'MITRE ATT&CK is more than a framework — it is a map of adversary behavior. Here is how to use it to measure and improve your detection capabilities.',
+    'bl.a8.title':'Security Monitoring as Process: From Alert to Action','bl.a8.body':'Tools alone do not provide security. It is the processes around them that determine whether alerts become action or just noise.',
+    'bl.a9.title':'Entra ID and Conditional Access: Zero Trust Architecture in Practice','bl.a9.body':'Zero Trust is more than a buzzword. With Entra ID and Conditional Access you can implement real zero trust security — here is how.',
+    'bl.a10.title':'Microsoft Defender for Endpoint: XDR in Practice','bl.a10.body':'Endpoint protection is about more than antivirus. Here is how to use Microsoft Defender for Endpoint as part of a comprehensive XDR strategy.',
+    'bl.a11.title':'Active Directory Hardening: Protecting the Foundation of Your IT Environment','bl.a11.body':'Active Directory remains the attacker\'s favorite target. Here is how to harden your AD environment to stop lateral movement and privilege escalation.',
+    'bl.a12.title':'Threat Intelligence in Practice: From Data to Decisions','bl.a12.body':'Threat intelligence is more than IOC feeds. Here is how to turn threat information into actionable decisions for your security team.',
+    'bl.a13.title':'Log Strategy for Sentinel: What Should You Collect?','bl.a13.body':'Collecting everything is expensive and pointless. A good log strategy is about prioritizing the right sources for detection and investigation.',
+    'bl.a14.title':'Incident Communication: How to Brief Leadership During an Active Breach','bl.a14.body':'When an incident is unfolding, leadership needs clear language. Here is how to structure briefings that drive correct decisions fast.',
+    'bl.a15.title':'Email Security and Phishing Defense: Defense in Depth','bl.a15.body':'Email remains attack vector number one. Here is how to build a layered defense that catches phishing before it reaches users — and handles what gets through.',
+    'bl.a16.title':'SOC Automation with SOAR: Playbooks That Scale Your Security Team','bl.a16.body':'Security teams drown in manual tasks. SOAR playbooks in Sentinel automate the repetitive, so analysts can focus on what matters.',
+
+    'kt.cta':'Send message →','kt.eyebrow':'— CONTACT —','kt.title':'Contact Us','kt.lede':'Tell us about your security challenges. We respond within one business day.',
+    'kt.info.title':'Contact Us','kt.info.lede':'Ready to discuss your security needs? Reach out anytime.',
+    'kt.phone':'Phone','kt.email':'Email','kt.loc':'Location','kt.addr':'Terje Løvås vei 1<br/>4879 Grimstad, Norway',
+    'kt.hours':'Response','kt.hours.val':'Within 1 business day · 24/7 retainer',
+    'kt.form.title':'Send us a message','kt.form.lede':"Fill out the form and we'll get back to you within one business day.",
+    'kt.f.name':'Name *','kt.f.email':'Email *','kt.f.company':'Company','kt.f.phone':'Phone','kt.f.msg':'Message *','kt.f.send':'Send message →','kt.f.note':'We treat inquiries confidentially. No marketing contact.',
+    'kt.meet.title':'Book a Meeting','kt.meet.body':'Schedule a non-binding consultation at your convenience.',
+    'kt.mail.title':'Send Us an Email','kt.mail.body':'For inquiries and security discussions.',
+    'kt.ph.name':'Your full name','kt.ph.email':'you@company.com','kt.ph.company':'Company name','kt.ph.phone':'+47','kt.ph.msg':'Tell us what you need help with...',
+    'aria.theme':'Toggle theme','aria.lang':'Language','aria.nav':'Main menu',
+
+    'login.title':'Log in','login.lede':'Access the customer portal for ForSec clients.',
+    'login.email':'Email','login.pass':'Password','login.ph.email':'you@company.com',
+    'login.remember':'Remember me','login.forgot':'Forgot password?','login.cta':'Log in',
+    'login.pending':'Login is not active yet. Connection coming.','login.foot':'Need access? Contact your ForSec advisor.','login.close':'Close'
   }
 };
 
@@ -208,6 +300,18 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (dict[key] != null) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.dataset.i18nAriaLabel;
+    if (dict[key] != null) el.setAttribute('aria-label', dict[key]);
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.dataset.i18nTitle;
+    if (dict[key] != null) el.setAttribute('title', dict[key]);
   });
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   localStorage.setItem('lang', lang);
@@ -295,6 +399,38 @@ setTimeout(() => {
   document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in'));
 }, 2500);
 
+// ===================== Blog filter =====================
+const filterChips = document.querySelectorAll('.filter-chip');
+const postCards = document.querySelectorAll('.post-card');
+const filterCount = document.getElementById('filter-count');
+const blogFilter = document.getElementById('blogFilter');
+const filterMore = document.getElementById('filterMore');
+
+function applyBlogFilter(tag) {
+  let visible = 0;
+  postCards.forEach(card => {
+    const tags = (card.dataset.tags || '').toLowerCase().split(/\s+/);
+    const show = tag === 'all' || tags.includes(tag.toLowerCase());
+    card.classList.toggle('is-hidden', !show);
+    if (show) visible++;
+  });
+  if (filterCount) filterCount.textContent = `(${visible})`;
+}
+
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    filterChips.forEach(c => c.classList.toggle('active', c === chip));
+    applyBlogFilter(chip.dataset.filter);
+  });
+});
+
+if (filterMore && blogFilter) {
+  filterMore.addEventListener('click', () => {
+    const expanded = !blogFilter.classList.toggle('is-collapsed');
+    filterMore.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  });
+}
+
 // ===================== Magnetic-ish button tilt =====================
 document.querySelectorAll('.btn-primary').forEach(btn => {
   btn.addEventListener('mousemove', e => {
@@ -305,3 +441,104 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
   });
   btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
 });
+
+// ===================== Login modal (Kundeportal) =====================
+(function () {
+  if (document.getElementById('loginModal')) return;
+
+  const modal = document.createElement('div');
+  modal.id = 'loginModal';
+  modal.className = 'modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'loginTitle');
+  modal.hidden = true;
+  modal.innerHTML = `
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" type="button" aria-label="Lukk" data-i18n-aria-label="login.close" data-close>×</button>
+      <div class="modal-head">
+        <div class="modal-logo"><img src="favicon.png" alt="ForSec" width="44" height="44" /></div>
+        <h2 id="loginTitle" data-i18n="login.title">Logg inn</h2>
+        <p data-i18n="login.lede">Tilgang til kundeportalen for ForSec-kunder.</p>
+      </div>
+      <form class="login-form" id="loginForm" novalidate>
+        <div class="field">
+          <label for="login-email" data-i18n="login.email">E-post</label>
+          <input id="login-email" name="email" type="email" required autocomplete="username"
+            placeholder="deg@selskap.no" data-i18n-placeholder="login.ph.email" />
+        </div>
+        <div class="field">
+          <label for="login-pass" data-i18n="login.pass">Passord</label>
+          <input id="login-pass" name="password" type="password" required autocomplete="current-password"
+            placeholder="••••••••" />
+        </div>
+        <div class="login-row">
+          <label class="check">
+            <input type="checkbox" name="remember" />
+            <span data-i18n="login.remember">Husk meg</span>
+          </label>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit" data-i18n="login.cta">Logg inn</button>
+        <p class="login-msg" id="loginMsg" role="status" aria-live="polite"></p>
+        <p class="login-foot" data-i18n="login.foot">Trenger du tilgang? Kontakt din ForSec-rådgiver.</p>
+      </form>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    // hydrate remembered email
+    const savedEmail = localStorage.getItem('rememberEmail');
+    const emailEl = modal.querySelector('#login-email');
+    const rememberEl = modal.querySelector('input[name="remember"]');
+    const passEl = modal.querySelector('#login-pass');
+    if (savedEmail && emailEl) { emailEl.value = savedEmail; if (rememberEl) rememberEl.checked = true; }
+    requestAnimationFrame(() => modal.classList.add('is-open'));
+    setTimeout(() => (savedEmail ? passEl : emailEl)?.focus(), 60);
+  }
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => { modal.hidden = true; }, 220);
+    const msg = document.getElementById('loginMsg'); if (msg) msg.textContent = '';
+  }
+
+  document.querySelectorAll('[data-action="login"]').forEach(btn => {
+    btn.addEventListener('click', e => { e.preventDefault(); openModal(); });
+  });
+  modal.addEventListener('click', e => {
+    if (e.target.matches('[data-close]')) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  document.getElementById('loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const email = form.querySelector('#login-email').value.trim();
+    const remember = form.querySelector('input[name="remember"]').checked;
+    if (remember && email) localStorage.setItem('rememberEmail', email);
+    else localStorage.removeItem('rememberEmail');
+    const msg = document.getElementById('loginMsg');
+    const lang = document.documentElement.lang || 'no';
+    msg.textContent = (I18N[lang] && I18N[lang]['login.pending']) || 'Innlogging ikke aktiv ennå.';
+    msg.classList.add('is-info');
+  });
+
+  // toggle live: unchecking clears saved email immediately
+  modal.addEventListener('change', e => {
+    if (e.target.matches('input[name="remember"]') && !e.target.checked) {
+      localStorage.removeItem('rememberEmail');
+    }
+  });
+
+  // re-apply i18n on newly injected nodes
+  if (typeof applyLang === 'function') {
+    const saved = localStorage.getItem('lang');
+    if (saved) applyLang(saved);
+  }
+})();

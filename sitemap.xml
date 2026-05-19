@@ -10,6 +10,30 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://forsec.no/"/>
   </url>
   <url>
+    <loc>https://forsec.no/om-oss.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="no" href="https://forsec.no/om-oss.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsec.no/om-oss.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsec.no/om-oss.html"/>
+  </url>
+  <url>
+    <loc>https://forsec.no/kontakt.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="no" href="https://forsec.no/kontakt.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsec.no/kontakt.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsec.no/kontakt.html"/>
+  </url>
+  <url>
+    <loc>https://forsec.no/blogg.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="no" href="https://forsec.no/blogg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsec.no/blogg.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsec.no/blogg.html"/>
+  </url>
+  <url>
     <loc>https://forsec.no/tjenester.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

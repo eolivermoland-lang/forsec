@@ -25,8 +25,8 @@
 <meta property="og:image" content="https://forsec.no/forsec-logo.png" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="icon" type="image/png" href="forsec-logo.png" />
-<link rel="apple-touch-icon" href="forsec-logo.png" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -78,15 +78,15 @@
     <a class="brand" href="index.html" aria-label="ForSec hjem">
       <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" fetchpriority="high" />
     </a>
-    <nav class="main-nav" aria-label="Hovedmeny">
+    <nav class="main-nav" aria-label="Hovedmeny" data-i18n-aria-label="aria.nav">
       <a href="index.html"       class="nav-link"        data-i18n="nav.home">Hjem</a>
       <a href="tjenester.html"   class="nav-link active" data-i18n="nav.services">Tjenester</a>
-      <a href="index.html#om"    class="nav-link"        data-i18n="nav.about">Om oss</a>
-      <a href="index.html#blogg" class="nav-link"        data-i18n="nav.blog">Blogg</a>
-      <a href="index.html#kontakt" class="nav-link"      data-i18n="nav.contact">Kontakt</a>
+      <a href="om-oss.html"      class="nav-link"        data-i18n="nav.about">Om oss</a>
+      <a href="blogg.html"       class="nav-link"        data-i18n="nav.blog">Blogg</a>
+      <a href="kontakt.html"       class="nav-link"      data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="header-utils">
-      <button class="theme-toggle" id="themeToggle" aria-label="Bytt tema">
+      <button class="theme-toggle" id="themeToggle" aria-label="Bytt tema" data-i18n-aria-label="aria.theme">
         <span class="icon-wrap">
           <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
@@ -99,12 +99,12 @@
           </svg>
         </span>
       </button>
-      <div class="lang-toggle" role="group" aria-label="Språk">
+      <div class="lang-toggle" role="group" aria-label="Språk" data-i18n-aria-label="aria.lang">
         <button class="lang-btn active" data-lang="no">NO</button>
         <span class="lang-sep">/</span>
         <button class="lang-btn"        data-lang="en">EN</button>
       </div>
-      <a class="btn btn-primary btn-sm" href="index.html#kontakt" data-i18n="nav.cta">Ta kontakt →</a>
+      <button class="btn btn-primary btn-sm" type="button" data-action="login" data-i18n="nav.cta">Kundeportal</button>
     </div>
   </div>
 </header>
@@ -347,8 +347,8 @@
       <div class="footer-col">
         <h4 data-i18n="footer.h1">SELSKAP</h4>
         <ul>
-          <li><a href="index.html#om"      data-i18n="footer.about">Om oss</a></li>
-          <li><a href="index.html#kontakt" data-i18n="footer.contact">Kontakt</a></li>
+          <li><a href="om-oss.html"        data-i18n="footer.about">Om oss</a></li>
+          <li><a href="kontakt.html" data-i18n="footer.contact">Kontakt</a></li>
           <li><a href="#"                  data-i18n="footer.career">Karriere</a></li>
           <li><a href="#"                  data-i18n="footer.privacy">Personvern</a></li>
           <li><a href="#"                  data-i18n="footer.terms">Vilkår</a></li>

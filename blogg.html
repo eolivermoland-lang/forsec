@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="no" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#162e51" />
+<meta name="color-scheme" content="light dark" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="author" content="ForSec AS" />
+<meta name="keywords" content="cybersikkerhet blogg, NIS2, ransomware, hendelsesrespons, KQL, Azure, MITRE ATT&CK, Sentinel, deteksjon, SOC, Norge" />
+<meta name="description" content="ForSec blogg – innsikt, trender og praktisk veiledning innen cybersikkerhet for norske virksomheter." />
+
+<title>Blogg – ForSec | Innsikt og rådgivning innen cybersikkerhet</title>
+
+<link rel="canonical" href="https://forsec.no/blogg.html" />
+<link rel="alternate" hreflang="no" href="https://forsec.no/blogg.html" />
+<link rel="alternate" hreflang="en" href="https://forsec.no/blogg.html?lang=en" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ForSec" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:url" content="https://forsec.no/blogg.html" />
+<meta property="og:title" content="ForSec Blogg" />
+<meta property="og:description" content="Cybersikkerhets-innsikt, trender og veiledning for norske virksomheter." />
+<meta property="og:image" content="https://forsec.no/favicon.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Blog",
+  "name":"ForSec Blogg",
+  "url":"https://forsec.no/blogg.html",
+  "publisher":{"@type":"Organization","name":"ForSec AS","url":"https://forsec.no/"},
+  "inLanguage":["nb-NO","en"]
+}
+</script>
+</head>
+<body class="page-blog">
+
+<a class="skip-link" href="#main">Hopp til hovedinnhold</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="ForSec hjem">
+      <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" fetchpriority="high" />
+    </a>
+    <nav class="main-nav" aria-label="Hovedmeny" data-i18n-aria-label="aria.nav">
+      <a href="index.html"         class="nav-link"        data-i18n="nav.home">Hjem</a>
+      <a href="tjenester.html"     class="nav-link"        data-i18n="nav.services">Tjenester</a>
+      <a href="om-oss.html"        class="nav-link"        data-i18n="nav.about">Om oss</a>
+      <a href="blogg.html"         class="nav-link active" data-i18n="nav.blog">Blogg</a>
+      <a href="kontakt.html"       class="nav-link"        data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="header-utils">
+      <button class="theme-toggle" id="themeToggle" aria-label="Bytt tema" data-i18n-aria-label="aria.theme">
+        <span class="icon-wrap">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+              <path d="M12 2.5v2.7M12 18.8v2.7M2.5 12h2.7M18.8 12h2.7M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M4.9 19.1l1.9-1.9M17.2 6.8l1.9-1.9"/>
+            </g>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="currentColor"/>
+          </svg>
+        </span>
+      </button>
+      <div class="lang-toggle" role="group" aria-label="Språk" data-i18n-aria-label="aria.lang">
+        <button class="lang-btn active" data-lang="no">NO</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn"        data-lang="en">EN</button>
+      </div>
+      <button class="btn btn-primary btn-sm" type="button" data-action="login" data-i18n="nav.cta">Kundeportal</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero hero-sub" aria-labelledby="blogg-hero">
+  <div class="container hero-inner">
+    <span class="eyebrow light" data-i18n="bl.eyebrow">— BLOGG —</span>
+    <h1 class="hero-title" id="blogg-hero" data-i18n="bl.title">Blogg</h1>
+    <p class="hero-lede" data-i18n="bl.lede">Cybersikkerhets-innsikt, trender og veiledning for norske virksomheter.</p>
+  </div>
+</section>
+
+<!-- ============ FILTER + LIST ============ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="blog-filter is-collapsed" id="blogFilter" role="tablist" aria-label="Filtrer artikler etter tema">
+      <button class="filter-chip active" data-filter="all"><span data-i18n="bl.all">Alle</span> <span class="count" id="filter-count">(16)</span></button>
+      <button class="filter-chip" data-filter="SOC">SOC</button>
+      <button class="filter-chip" data-filter="Sentinel">Sentinel</button>
+      <button class="filter-chip" data-filter="Security">Security</button>
+      <button class="filter-chip" data-filter="Detection">Detection</button>
+      <button class="filter-chip" data-filter="Azure">Azure</button>
+      <button class="filter-chip" data-filter="Strategy">Strategy</button>
+      <button class="filter-chip" data-filter="NIS2">NIS2</button>
+      <button class="filter-chip" data-filter="Compliance">Compliance</button>
+
+      <button class="filter-chip extra" data-filter="Regulation">Regulation</button>
+      <button class="filter-chip extra" data-filter="Ransomware">Ransomware</button>
+      <button class="filter-chip extra" data-filter="Threats">Threats</button>
+      <button class="filter-chip extra" data-filter="Incident-Response">Incident Response</button>
+      <button class="filter-chip extra" data-filter="Planning">Planning</button>
+      <button class="filter-chip extra" data-filter="Preparedness">Preparedness</button>
+      <button class="filter-chip extra" data-filter="Sigma">Sigma</button>
+      <button class="filter-chip extra" data-filter="Blue-Team">Blue Team</button>
+      <button class="filter-chip extra" data-filter="SIEM">SIEM</button>
+      <button class="filter-chip extra" data-filter="KQL">KQL</button>
+      <button class="filter-chip extra" data-filter="Threat-Hunting">Threat Hunting</button>
+      <button class="filter-chip extra" data-filter="Cloud-Security">Cloud Security</button>
+      <button class="filter-chip extra" data-filter="Configuration">Configuration</button>
+      <button class="filter-chip extra" data-filter="MITRE">MITRE ATT&CK</button>
+      <button class="filter-chip extra" data-filter="Processes">Processes</button>
+      <button class="filter-chip extra" data-filter="Monitoring">Monitoring</button>
+      <button class="filter-chip extra" data-filter="Entra-ID">Entra ID</button>
+      <button class="filter-chip extra" data-filter="Zero-Trust">Zero Trust</button>
+      <button class="filter-chip extra" data-filter="Defender">Defender</button>
+      <button class="filter-chip extra" data-filter="XDR">XDR</button>
+      <button class="filter-chip extra" data-filter="Endpoint">Endpoint</button>
+      <button class="filter-chip extra" data-filter="Active-Directory">Active Directory</button>
+      <button class="filter-chip extra" data-filter="Hardening">Hardening</button>
+      <button class="filter-chip extra" data-filter="Identity">Identity</button>
+      <button class="filter-chip extra" data-filter="Threat-Intelligence">Threat Intelligence</button>
+      <button class="filter-chip extra" data-filter="Logging">Logging</button>
+      <button class="filter-chip extra" data-filter="Email">Email</button>
+      <button class="filter-chip extra" data-filter="Phishing">Phishing</button>
+      <button class="filter-chip extra" data-filter="SOAR">SOAR</button>
+      <button class="filter-chip extra" data-filter="Automation">Automation</button>
+      <button class="filter-chip extra" data-filter="DevOps">DevOps</button>
+      <button class="filter-chip extra" data-filter="Workflow">Workflow</button>
+      <button class="filter-chip extra" data-filter="Leadership">Leadership</button>
+      <button class="filter-chip extra" data-filter="Communication">Communication</button>
+
+      <button class="filter-more" id="filterMore" aria-expanded="false" aria-controls="blogFilter">
+        <span class="more-plus" aria-hidden="true">+</span><span class="more-count">30</span>
+      </button>
+    </div>
+
+    <div class="blog-list" id="blogList">
+
+      <article class="post-card reveal" data-tags="NIS2 Compliance Regulation">
+        <div class="post-meta"><time datetime="2026-02-15">15. feb 2026</time><span>•</span><span>5 min</span></div>
+        <h2><a href="#" data-i18n="bl.a1.title">NIS2-direktivet: Hva norske virksomheter må vite i 2026</a></h2>
+        <p data-i18n="bl.a1.body">NIS2 stiller strengere krav til cybersikkerhet for kritisk infrastruktur. Her er hva din virksomhet må gjøre for å bli compliant.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>NIS2</li><li>Compliance</li><li data-i18n="bl.tag.regulation">Regulation</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Ransomware Security Threats">
+        <div class="post-meta"><time datetime="2026-02-28">28. feb 2026</time><span>•</span><span>6 min</span></div>
+        <h2><a href="#" data-i18n="bl.a2.title">Ransomware-trender i Norge: Slik beskytter du virksomheten</a></h2>
+        <p data-i18n="bl.a2.body">Ransomware-angrep mot norske virksomheter øker. Lær om de nyeste trendene og konkrete tiltak for å beskytte din organisasjon.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Ransomware</li><li>Security</li><li>Threats</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Incident-Response Planning Preparedness">
+        <div class="post-meta"><time datetime="2026-03-01">1. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a3.title">Slik bygger du en hendelsesresponsplan som faktisk fungerer</a></h2>
+        <p data-i18n="bl.a3.body">En hendelsesresponsplan er verdiløs hvis ingen vet hvordan den brukes. Her er en praktisk guide til å bygge en plan som virker under press.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Incident Response</li><li>Planning</li><li>Preparedness</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Detection DevOps Workflow">
+        <div class="post-meta"><time datetime="2026-03-02">2. mar 2026</time><span>•</span><span>8 min</span></div>
+        <h2><a href="#" data-i18n="bl.a4.title">Detection Engineering-workflow: Fra idé til produksjonsregel</a></h2>
+        <p data-i18n="bl.a4.body">Skreddersydde deteksjonsregler krever struktur. Slik bygger du en pipeline fra idé til testet, dokumentert og deployet regel.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Detection</li><li>DevOps</li><li>Workflow</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="KQL Sentinel Threat-Hunting">
+        <div class="post-meta"><time datetime="2026-03-05">5. mar 2026</time><span>•</span><span>8 min</span></div>
+        <h2><a href="#" data-i18n="bl.a5.title">KQL for sikkerhetsteam: En praktisk guide til trusseljakt</a></h2>
+        <p data-i18n="bl.a5.body">Kusto Query Language er det kraftigste verktøyet i Sentinel-arsenalet. Her er praktiske KQL-spørringer du kan bruke til trusseljakt i dag.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>KQL</li><li>Sentinel</li><li>Threat Hunting</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Azure Cloud-Security Configuration">
+        <div class="post-meta"><time datetime="2026-03-06">6. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a6.title">Azure-sikkerhetskonfigurasjon: De 10 vanligste feilene</a></h2>
+        <p data-i18n="bl.a6.body">Vi ser de samme sikkerhetsfeilene i Azure-miljøer gang på gang. Her er de 10 vanligste — og hvordan du fikser dem.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Azure</li><li>Cloud Security</li><li>Configuration</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="MITRE Detection SOC">
+        <div class="post-meta"><time datetime="2026-03-07">7. mar 2026</time><span>•</span><span>8 min</span></div>
+        <h2><a href="#" data-i18n="bl.a7.title">MITRE ATT&CK i praksis: Kartlegg deteksjonsdekningen din</a></h2>
+        <p data-i18n="bl.a7.body">MITRE ATT&CK er mer enn et rammeverk — det er et kart over fiendtlig oppførsel. Slik bruker du det til å måle og forbedre deteksjon.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>MITRE ATT&CK</li><li>Detection</li><li>SOC</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Processes SOC Monitoring">
+        <div class="post-meta"><time datetime="2026-03-08">8. mar 2026</time><span>•</span><span>6 min</span></div>
+        <h2><a href="#" data-i18n="bl.a8.title">Sikkerhetsovervåkning som prosess: Fra alarm til handling</a></h2>
+        <p data-i18n="bl.a8.body">Verktøy alene gir ikke sikkerhet. Det er prosessene rundt dem som avgjør om alarmer blir handling eller bare støy.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Processes</li><li>SOC</li><li>Monitoring</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Entra-ID Zero-Trust Azure">
+        <div class="post-meta"><time datetime="2026-03-09">9. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a9.title">Entra ID og Conditional Access: Zero Trust-arkitektur i praksis</a></h2>
+        <p data-i18n="bl.a9.body">Zero Trust er mer enn et buzzword. Med Entra ID og Conditional Access kan du implementere reell zero trust-sikkerhet — slik gjør du det.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Entra ID</li><li>Zero Trust</li><li>Azure</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Defender XDR Endpoint Security">
+        <div class="post-meta"><time datetime="2026-03-10">10. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a10.title">Microsoft Defender for Endpoint: XDR i praksis</a></h2>
+        <p data-i18n="bl.a10.body">Endepunktbeskyttelse handler om mer enn antivirus. Slik bruker du Microsoft Defender for Endpoint som del av en helhetlig XDR-strategi.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Defender</li><li>XDR</li><li>Endpoint</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Active-Directory Hardening Identity">
+        <div class="post-meta"><time datetime="2026-03-11">11. mar 2026</time><span>•</span><span>8 min</span></div>
+        <h2><a href="#" data-i18n="bl.a11.title">Active Directory-herding: Beskytt grunnmuren i IT-miljøet</a></h2>
+        <p data-i18n="bl.a11.body">Active Directory er angriperens favorittmål. Slik herder du AD-miljøet for å stoppe lateral bevegelse og priviligert eskalering.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Active Directory</li><li>Hardening</li><li>Identity</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Threat-Intelligence SOC Strategy">
+        <div class="post-meta"><time datetime="2026-03-12">12. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a12.title">Trusseletterretning i praksis: Fra data til beslutninger</a></h2>
+        <p data-i18n="bl.a12.body">Threat intelligence er mer enn IOC-feeds. Slik gjør du trusselinformasjon om til konkrete beslutninger for sikkerhetsteamet ditt.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Threat Intelligence</li><li>SOC</li><li>Strategy</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Logging Sentinel Strategy">
+        <div class="post-meta"><time datetime="2026-03-13">13. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a13.title">Logg-strategi for Sentinel: Hva bør du samle inn?</a></h2>
+        <p data-i18n="bl.a13.body">Å samle inn alt er dyrt og meningsløst. En god logg-strategi handler om å prioritere riktige kilder for deteksjon og etterforskning.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Logging</li><li>Sentinel</li><li>Strategy</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Incident-Response Communication Leadership">
+        <div class="post-meta"><time datetime="2026-03-14">14. mar 2026</time><span>•</span><span>6 min</span></div>
+        <h2><a href="#" data-i18n="bl.a14.title">Hendelseskommunikasjon: Slik briefer du ledelsen under et aktivt brudd</a></h2>
+        <p data-i18n="bl.a14.body">Når hendelsen står på, må ledelsen ha klart språk. Slik strukturerer du briefings som gir riktige beslutninger raskt.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Incident Response</li><li>Communication</li><li>Leadership</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="Email Phishing Security">
+        <div class="post-meta"><time datetime="2026-03-15">15. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a15.title">E-postsikkerhet og phishing-forsvar: Defense in depth</a></h2>
+        <p data-i18n="bl.a15.body">E-post er fortsatt angrepsvektor nummer én. Slik bygger du et lag-på-lag-forsvar som fanger phishing før det når brukerne — og håndterer det som slipper gjennom.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>Email</li><li>Phishing</li><li>Security</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+      <article class="post-card reveal" data-tags="SOAR Automation SOC">
+        <div class="post-meta"><time datetime="2026-03-16">16. mar 2026</time><span>•</span><span>7 min</span></div>
+        <h2><a href="#" data-i18n="bl.a16.title">SOC-automatisering med SOAR: Playbooks som skalerer teamet</a></h2>
+        <p data-i18n="bl.a16.body">Sikkerhetsteam drukner i manuelle oppgaver. SOAR-playbooks i Sentinel automatiserer det repetitive, slik at analytikere kan fokusere på det som betyr noe.</p>
+        <div class="post-foot">
+          <ul class="chips small"><li>SOAR</li><li>Automation</li><li>SOC</li></ul>
+          <a class="link" href="#" data-i18n="bl.read">Les mer →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-section" id="kontakt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow light" data-i18n="cta.eyebrow">— TA KONTAKT —</span>
+      <h2 class="light" data-i18n="cta.title">Klar for sterkere forsvar?</h2>
+      <p class="lede light" data-i18n="cta.lede">La oss diskutere hvordan vi kan hjelpe å sikre din organisasjon. Innledende samtale er alltid uforpliktende.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary"       href="mailto:contact@forsec.no" data-i18n="cta.btn1">📞 Ta kontakt →</a>
+      <a class="btn btn-outline-light" href="tel:+4799220677">📞 +47 99 22 06 77</a>
+    </div>
+    <ul class="trust-row">
+      <li data-i18n="cta.t1">★ FIRST.ORG MEDLEM</li>
+      <li data-i18n="cta.t2">★ MICROSOFT PARTNER</li>
+      <li data-i18n="cta.t3">★ BASERT I NORGE</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" />
+        </a>
+        <span class="footer-tag" data-i18n="footer.tag">OPERATIV CYBERSIKKERHET</span>
+        <p data-i18n="footer.body">Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.</p>
+        <div class="status-pill"><span class="dot"></span><span data-i18n="footer.status">SOC OPERATIVT &nbsp;/&nbsp; 24/7</span></div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h1">SELSKAP</h4>
+        <ul>
+          <li><a href="om-oss.html"        data-i18n="footer.about">Om oss</a></li>
+          <li><a href="kontakt.html" data-i18n="footer.contact">Kontakt</a></li>
+          <li><a href="#"                  data-i18n="footer.career">Karriere</a></li>
+          <li><a href="#"                  data-i18n="footer.privacy">Personvern</a></li>
+          <li><a href="#"                  data-i18n="footer.terms">Vilkår</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h2">TJENESTER</h4>
+        <ul>
+          <li><a href="tjenester.html" data-i18n="footer.s1">Deteksjonsutvikling</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s2">Hendelsesrespons</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s3">Forensikk</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s4">Penetrasjonstesting</a></li>
+          <li><a href="tjenester.html" data-i18n="footer.s5">Herding og vurdering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.h3">KONTAKT</h4>
+        <ul class="contact-list">
+          <li><span class="ci">📞</span><a href="tel:+4799220677">+47 99 22 06 77</a></li>
+          <li><span class="ci">✉</span><a href="mailto:contact@forsec.no">contact@forsec.no</a></li>
+          <li><span class="ci">📍</span><span data-i18n="footer.addr">Terje Løvås vei 1<br/>4879 Grimstad, Norge</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2026 ForSec AS — Alle rettigheter reservert</span>
+      <span data-i18n="footer.orgnr">Org.nr: 931 208 306</span>
+      <div class="footer-lang">
+        <button class="lang-btn active" data-lang="no" data-i18n="footer.lang.no">NORSK</button>
+        <button class="lang-btn"        data-lang="en" data-i18n="footer.lang.en">ENGLISH</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
