@@ -56,7 +56,7 @@ const I18N = {
     'blog.b3.tag':'Hendelsesrespons','blog.b3.date':'1. MARS','blog.b3.read':'7 min lesetid','blog.b3.title':'Slik bygger du en hendelsesresponsplan som faktisk fungerer','blog.b3.body':'En hendelsesresponsplan er verdiløs hvis ingen vet hvordan den brukes. Her er en praktisk guide til å bygge en plan som virker under press.','blog.b3.chip1':'Hendelsesrespons','blog.b3.chip2':'Planlegging',
 
     'cta.eyebrow':'— TA KONTAKT —','cta.title':'Klar for sterkere forsvar?','cta.lede':'La oss diskutere hvordan vi kan hjelpe å sikre din organisasjon. Innledende samtale er alltid uforpliktende.',
-    'cta.btn1':'📞 Ta kontakt →','cta.t1':'★ FIRST.ORG MEDLEM','cta.t2':'★ MICROSOFT PARTNER','cta.t3':'★ BASERT I NORGE',
+    'cta.btn1':'<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg> Ta kontakt →','cta.t1':'<span aria-hidden="true">★</span> FIRST.ORG MEDLEM','cta.t2':'<span aria-hidden="true">★</span> MICROSOFT PARTNER','cta.t3':'<span aria-hidden="true">★</span> BASERT I NORGE',
 
     'footer.tag':'OPERATIV CYBERSIKKERHET','footer.body':'Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.','footer.status':'SOC OPERATIVT &nbsp;/&nbsp; 24/7',
     'footer.h1':'SELSKAP','footer.about':'Om oss','footer.contact':'Kontakt','footer.career':'Karriere','footer.privacy':'Personvern','footer.terms':'Vilkår',
@@ -128,7 +128,7 @@ const I18N = {
     'kt.meet.title':'Book et møte','kt.meet.body':'Planlegg en uforpliktende konsultasjon når det passer deg.',
     'kt.mail.title':'Send oss en e-post','kt.mail.body':'For henvendelser og sikkerhetsdiskusjoner.',
     'kt.ph.name':'Ditt fulle navn','kt.ph.email':'deg@selskap.no','kt.ph.company':'Selskapsnavn','kt.ph.phone':'+47','kt.ph.msg':'Fortell oss hva du trenger hjelp med...',
-    'aria.theme':'Bytt tema','aria.lang':'Språk','aria.nav':'Hovedmeny',
+    'aria.theme':'Bytt tema','aria.lang':'Språk','aria.nav':'Hovedmeny','aria.menu':'Meny',
 
     'login.title':'Logg inn','login.lede':'Tilgang til kundeportalen for ForSec-kunder.',
     'login.email':'E-post','login.pass':'Passord','login.ph.email':'deg@selskap.no',
@@ -191,7 +191,7 @@ const I18N = {
     'blog.b3.tag':'Incident response','blog.b3.date':'1 MAR','blog.b3.read':'7 min read','blog.b3.title':'How to build an incident response plan that actually works','blog.b3.body':'An incident response plan is worthless if no one knows how to use it. Here is a practical guide to building a plan that works under pressure.','blog.b3.chip1':'Incident response','blog.b3.chip2':'Planning',
 
     'cta.eyebrow':'— CONTACT US —','cta.title':'Ready for stronger defense?','cta.lede':'Let us discuss how we can help secure your organization. An initial conversation is always non-binding.',
-    'cta.btn1':'📞 Contact us →','cta.t1':'★ FIRST.ORG MEMBER','cta.t2':'★ MICROSOFT PARTNER','cta.t3':'★ BASED IN NORWAY',
+    'cta.btn1':'<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg> Contact us →','cta.t1':'<span aria-hidden="true">★</span> FIRST.ORG MEMBER','cta.t2':'<span aria-hidden="true">★</span> MICROSOFT PARTNER','cta.t3':'<span aria-hidden="true">★</span> BASED IN NORWAY',
 
     'footer.tag':'OPERATIONAL CYBERSECURITY','footer.body':'Blue team specialists with 16+ years of CERT/SOC experience. Detection, response and hardening — built by operators, not consultants.','footer.status':'SOC OPERATIONAL &nbsp;/&nbsp; 24/7',
     'footer.h1':'COMPANY','footer.about':'About','footer.contact':'Contact','footer.career':'Careers','footer.privacy':'Privacy','footer.terms':'Terms',
@@ -263,7 +263,7 @@ const I18N = {
     'kt.meet.title':'Book a Meeting','kt.meet.body':'Schedule a non-binding consultation at your convenience.',
     'kt.mail.title':'Send Us an Email','kt.mail.body':'For inquiries and security discussions.',
     'kt.ph.name':'Your full name','kt.ph.email':'you@company.com','kt.ph.company':'Company name','kt.ph.phone':'+47','kt.ph.msg':'Tell us what you need help with...',
-    'aria.theme':'Toggle theme','aria.lang':'Language','aria.nav':'Main menu',
+    'aria.theme':'Toggle theme','aria.lang':'Language','aria.nav':'Main menu','aria.menu':'Menu',
 
     'login.title':'Log in','login.lede':'Access the customer portal for ForSec clients.',
     'login.email':'Email','login.pass':'Password','login.ph.email':'you@company.com',
@@ -373,8 +373,7 @@ faqItems.forEach(item => {
 // ===================== Active nav on scroll =====================
 const ids = ['top','tjenester','om','blogg','kontakt'];
 const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
-const links = document.querySelectorAll('.nav-link');
-const setActive = id => links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${id}`));
+const setActive = id => document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${id}`));
 const navIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) setActive(e.target.id); }),
   { rootMargin: '-40% 0px -55% 0px' });
 sections.forEach(s => navIO.observe(s));
@@ -441,6 +440,84 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
   });
   btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
 });
+
+// ===================== Mobile nav (hamburger + drawer) =====================
+(function () {
+  const header = document.querySelector('.site-header .header-inner');
+  const utils  = document.querySelector('.header-utils');
+  const desktopNav = document.querySelector('.site-header .main-nav');
+  if (!header || !utils || !desktopNav) return;
+
+  const toggle = document.createElement('button');
+  toggle.className = 'nav-toggle';
+  toggle.type = 'button';
+  toggle.setAttribute('aria-label', 'Meny');
+  toggle.setAttribute('data-i18n-aria-label', 'aria.menu');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'mobileNav');
+  toggle.innerHTML = '<span class="bars"><span></span></span>';
+  utils.appendChild(toggle);
+
+  const drawer = document.createElement('nav');
+  drawer.id = 'mobileNav';
+  drawer.className = 'mobile-nav';
+  drawer.setAttribute('aria-label', 'Mobilmeny');
+
+  // clone nav links
+  desktopNav.querySelectorAll('a.nav-link').forEach(a => {
+    const link = a.cloneNode(true);
+    link.addEventListener('click', () => closeDrawer());
+    drawer.appendChild(link);
+  });
+
+  // actions row: lang + Kundeportal
+  const actions = document.createElement('div');
+  actions.className = 'mn-actions';
+  actions.innerHTML = `
+    <div class="lang-toggle mn-lang" role="group" aria-label="Språk" data-i18n-aria-label="aria.lang">
+      <button class="lang-btn" data-lang="no">NO</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <button class="btn btn-primary btn-sm" type="button" data-action="login" data-i18n="nav.cta">Kundeportal</button>
+  `;
+  drawer.appendChild(actions);
+  document.body.appendChild(drawer);
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  toggle.addEventListener('click', () => {
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) closeDrawer();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1000 && drawer.classList.contains('is-open')) closeDrawer();
+  });
+
+  // wire lang buttons in drawer (use same applyLang)
+  drawer.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof applyLang === 'function') applyLang(btn.dataset.lang);
+      closeDrawer();
+    });
+  });
+
+  // re-apply current lang to populate drawer + active state
+  if (typeof applyLang === 'function') {
+    const cur = document.documentElement.lang || 'no';
+    applyLang(cur);
+  }
+})();
 
 // ===================== Login modal (Kundeportal) =====================
 (function () {
@@ -513,7 +590,18 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
     if (e.target.matches('[data-close]')) closeModal();
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
+    if (modal.hidden) return;
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key === 'Tab') {
+      // focus trap inside modal panel
+      const focusables = modal.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusables.length) return;
+      const first = focusables[0], last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
   });
 
   document.getElementById('loginForm').addEventListener('submit', e => {
