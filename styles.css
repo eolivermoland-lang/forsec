@@ -597,8 +597,12 @@ h2.light { color: #fff; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { justify-content: center; text-align: center; }
   .section { padding: 64px 0; }
-  .hero { padding: 60px 0 50px; }
-  .hero-stats { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .container { padding: 0 22px; }
+  .hero { padding: 80px 0 72px; }
+  .hero-title { margin-bottom: 36px; line-height: 1.12; }
+  .hero-lede  { margin-bottom: 44px; line-height: 1.65; }
+  .hero-actions { gap: 14px; }
+  .hero-stats { grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 64px; }
 }
 @media (min-width: 1001px) {
   .mobile-nav { display: none; }
