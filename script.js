@@ -285,6 +285,8 @@ const ROTATOR_WORDS = {
 const heroRotator = document.getElementById('heroRotator');
 let rotIdx = 0;
 let rotWords = ROTATOR_WORDS.no;
+let rotBusy = false;
+let rotTimer = null;
 
 function rebuildRotator(lang) {
   if (!heroRotator) return;
@@ -327,25 +329,62 @@ const savedLang = urlLang || localStorage.getItem('lang');
 if (savedLang && I18N[savedLang]) applyLang(savedLang);
 
 function tickRotator() {
-  if (!heroRotator || rotWords.length < 2) return;
+  if (!heroRotator || rotWords.length < 2 || rotBusy) return;
+  rotBusy = true;
+
   // phase 1: slide up + fade out
   heroRotator.classList.remove('is-prep');
   heroRotator.classList.add('is-out');
-  setTimeout(() => {
-    // phase 2: swap text, jump to below (no transition)
+
+  let swapped = false;
+  const swap = () => {
+    if (swapped) return;
+    swapped = true;
+    heroRotator.removeEventListener('transitionend', onEnd);
+
+    // phase 2: swap text, jump below the line with no transition
     rotIdx = (rotIdx + 1) % rotWords.length;
     heroRotator.textContent = rotWords[rotIdx];
     heroRotator.classList.remove('is-out');
     heroRotator.classList.add('is-prep');
-    void heroRotator.offsetWidth; // force reflow
-    // phase 3: release prep -> transitions to base (opacity 1, translateY 0)
-    heroRotator.classList.remove('is-prep');
-  }, 460);
+
+    // phase 3: next frame, release prep -> animate up into place
+    let released = false;
+    const release = () => {
+      if (released) return;
+      released = true;
+      heroRotator.classList.remove('is-prep');
+      rotBusy = false;
+    };
+    requestAnimationFrame(() => requestAnimationFrame(release));
+    setTimeout(release, 120); // fallback if rAF is paused (background tab)
+  };
+
+  // swap only after the out-transition truly finishes (deterministic)
+  const onEnd = (e) => { if (e.propertyName === 'transform') swap(); };
+  heroRotator.addEventListener('transitionend', onEnd);
+  // fallback: transitionend may not fire (reduced motion, background tab)
+  setTimeout(swap, 650);
 }
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function startRotator() {
+  if (prefersReducedMotion.matches) return; // honor reduced-motion: keep one phrase, no cycling
+  if (!rotTimer) rotTimer = setInterval(tickRotator, 2600);
+}
+function stopRotator() { clearInterval(rotTimer); rotTimer = null; }
+
+// pause while tab hidden (rAF/transitions don't run there); resume cleanly
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { stopRotator(); return; }
+  if (heroRotator) heroRotator.classList.remove('is-out', 'is-prep');
+  rotBusy = false;
+  startRotator();
+});
 
 try {
   rebuildRotator(document.documentElement.lang || 'no');
-  setInterval(tickRotator, 2600);
+  if (!document.hidden) startRotator();
 } catch (err) { console.warn('rotator init failed', err); }
 
 // ===================== Theme toggle =====================
@@ -629,4 +668,58 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
     const saved = localStorage.getItem('lang');
     if (saved) applyLang(saved);
   }
+})();
+
+/* ---------- Prefetch internal pages on hover / focus / touch ---------- */
+/* Downloads the next page in the background so navigation feels instant. */
+(() => {
+  // Respect data-saver and very slow connections.
+  const conn = navigator.connection;
+  if (conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || ''))) return;
+
+  const prefetched = new Set();
+  const origin = location.origin;
+  let timer = null;
+
+  const resolve = (a) => new URL(a.href, location.href).href;
+
+  const eligible = (a) => {
+    if (!a || !a.getAttribute) return false;
+    const raw = a.getAttribute('href') || '';
+    if (!raw || raw[0] === '#') return false;                       // pure anchor
+    if (/^(mailto:|tel:|javascript:)/i.test(raw)) return false;     // non-navigations
+    if (a.hasAttribute('download')) return false;
+    if (a.target && a.target !== '_self') return false;             // opens new context
+    const url = new URL(a.href, location.href);
+    if (url.origin !== origin) return false;                        // same-origin only
+    if (url.pathname === location.pathname) return false;           // current page
+    return !prefetched.has(url.href);
+  };
+
+  const prefetch = (href) => {
+    if (prefetched.has(href)) return;
+    prefetched.add(href);
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.as = 'document';
+    link.href = href;
+    document.head.appendChild(link);
+  };
+
+  const onIntent = (e) => {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!eligible(a)) return;
+    const href = resolve(a);
+    clearTimeout(timer);                 // small delay skips links the cursor grazes
+    timer = setTimeout(() => prefetch(href), 65);
+  };
+
+  document.addEventListener('mouseover', onIntent, { passive: true });
+  document.addEventListener('focusin', onIntent, { passive: true });
+  document.addEventListener('mouseout', () => clearTimeout(timer), { passive: true });
+  // mobile: fire immediately on touch (no hover state to wait for)
+  document.addEventListener('touchstart', (e) => {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (eligible(a)) prefetch(resolve(a));
+  }, { passive: true });
 })();

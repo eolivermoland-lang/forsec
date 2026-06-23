@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#162e51" />
+<meta name="theme-color" content="#041635" />
 <meta name="color-scheme" content="light dark" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="googlebot" content="index, follow" />
 <meta name="author" content="ForSec AS" />
 <meta name="keywords" content="cybersikkerhet, blue team, CERT, SOC, deteksjon, hendelsesrespons, forensikk, pentest, herding, Sigma, YARA, KQL, MITRE ATT&CK, Norge, Grimstad" />
-<meta name="description" content="ForSec – Blue team-spesialister i Norge med 16+ års CERT/SOC-erfaring. Deteksjonsutvikling, hendelsesrespons, forensikk, penetrasjonstesting og herding. Microsoft Partner og FIRST.org Liaison." />
+<meta name="description" content="Blue team-spesialister i Norge med 16+ års CERT/SOC-erfaring. Deteksjon, hendelsesrespons, forensikk, pentest og herding — bygget av operatører, ikke konsulenter." />
 
 <title>ForSec – Operativ cybersikkerhet | Blue team, CERT/SOC, hendelsesrespons</title>
 
@@ -39,8 +39,8 @@
 <link rel="apple-touch-icon" href="favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swapdisplay=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=1779657871" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=1782205200" />
 
 <!-- JSON-LD: Organization + LocalBusiness -->
 <script type="application/ld+json">
@@ -112,7 +112,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="#top" aria-label="ForSec hjem">
-      <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" fetchpriority="high" />
+      <img class="brand-logo brand-logo--light" src="forsec-logo.svg" alt="ForSec" width="120" height="40" fetchpriority="high" /><img class="brand-logo brand-logo--dark" src="forsec-logo-dark.svg" alt="ForSec" width="120" height="40" fetchpriority="high" />
     </a>
 
     <nav class="main-nav" aria-label="Hovedmeny" data-i18n-aria-label="aria.nav">
@@ -163,7 +163,7 @@
     </p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#tjenester" data-i18n="hero.cta1">Se våre tjenester →</a>
-      <a class="btn btn-ghost"   href="#om"        data-i18n="hero.cta2">Om ForSec</a>
+      <a class="btn btn-ghost"   href="om-oss.html" data-i18n="hero.cta2">Om ForSec</a>
     </div>
 
     <ul class="hero-stats">
@@ -184,27 +184,24 @@
     </div>
 
     <div class="grid grid-3">
-      <article class="service-card reveal">
+      <article class="service-card reveal" data-num="01">
         <div class="card-num">01</div>
         <h3 data-i18n="who.c1.title">Deteksjon og trusseljakt</h3>
         <p data-i18n="who.c1.body">Vi skriver deteksjonsregler, tuner SIEM-plattformer og jakter på trusler i ditt miljø med Sigma, YARA og KQL.</p>
-        <ul class="chips"><li>Sigma</li><li>YARA</li><li>KQL</li><li data-i18n="who.c1.chip">Detection as code</li></ul>
         <a class="card-link" href="blogg.html" data-i18n="common.readmore">Les mer →</a>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card reveal" data-num="02">
         <div class="card-num">02</div>
         <h3 data-i18n="who.c2.title">Forensikk og hendelsesrespons</h3>
         <p data-i18n="who.c2.body">Når hendelsen inntreffer, er vi der. Disk-, minne- og nettverksforensikk med bevissinnhenting som holder i retten.</p>
-        <ul class="chips"><li>DFIR</li><li>Memory</li><li>Network</li><li data-i18n="who.c2.chip">Court grade</li></ul>
         <a class="card-link" href="blogg.html" data-i18n="common.readmore">Les mer →</a>
       </article>
 
-      <article class="service-card reveal">
+      <article class="service-card reveal" data-num="03">
         <div class="card-num">03</div>
         <h3 data-i18n="who.c3.title">Herding og sikkerhetstesting</h3>
         <p data-i18n="who.c3.body">Systematisk herding av servere, AD og sky. Penetrasjonstesting og purple teaming for å finne og lukke hull.</p>
-        <ul class="chips"><li data-i18n="who.c3.chip1">Hardening</li><li>Pentest</li><li data-i18n="who.c3.chip2">Purple team</li><li>Azure/AD</li></ul>
         <a class="card-link" href="blogg.html" data-i18n="common.readmore">Les mer →</a>
       </article>
     </div>
@@ -221,39 +218,24 @@
     </div>
 
     <div class="grid grid-3">
-      <article class="service-card pillar-card reveal">
-        <div class="card-num lg">01</div>
+      <article class="service-card pillar-card reveal" data-num="01">
+        <div class="card-num">01</div>
         <h3 data-i18n="core.c1.title">Deteksjonsutvikling</h3>
         <p data-i18n="core.c1.body">Skreddersydde deteksjonsregler i Sigma, YARA, KQL og SPL. SIEM-tuning, trusseljakt og detection-as-code som fanger reelle trusler — ikke bare støy.</p>
-        <ul class="check-list">
-          <li data-i18n="core.c1.l1">Microsoft Sentinel / Splunk / Elastic</li>
-          <li data-i18n="core.c1.l2">Detection engineering med Git workflows</li>
-          <li data-i18n="core.c1.l3">MITRE ATT&CK mapping per regel</li>
-        </ul>
         <a class="card-link" href="tjenester.html" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
       </article>
 
-      <article class="service-card pillar-card reveal">
-        <div class="card-num lg">02</div>
+      <article class="service-card pillar-card reveal" data-num="02">
+        <div class="card-num">02</div>
         <h3 data-i18n="core.c2.title">Hendelsesrespons og forensikk</h3>
         <p data-i18n="core.c2.body">Fra første alarm til ferdig rapport. Disk- og minneforensikk, skadevareanalyse, bevissikring og responsavtaler for når minuttene teller.</p>
-        <ul class="check-list">
-          <li data-i18n="core.c2.l1">Garantert responstid på retainer</li>
-          <li data-i18n="core.c2.l2">Volatility, FTK, EnCase, Velociraptor</li>
-          <li data-i18n="core.c2.l3">Rapporter som holder i rett</li>
-        </ul>
         <a class="card-link" href="tjenester.html" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
       </article>
 
-      <article class="service-card pillar-card reveal">
-        <div class="card-num lg">03</div>
+      <article class="service-card pillar-card reveal" data-num="03">
+        <div class="card-num">03</div>
         <h3 data-i18n="core.c3.title">Herding og vurderinger</h3>
         <p data-i18n="core.c3.body">Penetrasjonstesting, AD-sikkerhetsgjennomgang, sky-sikkerhetsvurdering og systematisk herding. Vi finner hullene og hjelper deg å tette dem.</p>
-        <ul class="check-list">
-          <li data-i18n="core.c3.l1">CIS-benchmarks og NSMs grunnprinsipper</li>
-          <li data-i18n="core.c3.l2">Azure / AWS / GCP sikkerhetsvurdering</li>
-          <li data-i18n="core.c3.l3">Purple team-øvelser</li>
-        </ul>
         <a class="card-link" href="tjenester.html" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
       </article>
     </div>
@@ -466,7 +448,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a class="brand" href="#top">
-          <img class="brand-logo" src="forsec-logo.png" alt="ForSec" width="120" height="40" fetchpriority="high" />
+          <img class="brand-logo brand-logo--light" src="forsec-logo.svg" alt="ForSec" width="120" height="40" loading="lazy" decoding="async" /><img class="brand-logo brand-logo--dark" src="forsec-logo-dark.svg" alt="ForSec" width="120" height="40" loading="lazy" decoding="async" />
         </a>
         <span class="footer-tag" data-i18n="footer.tag">OPERATIV CYBERSIKKERHET</span>
         <p data-i18n="footer.body">Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.</p>
@@ -516,6 +498,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=1779657871"></script>
+<script src="script.js?v=1782201700"></script>
 </body>
 </html>
