@@ -88,17 +88,6 @@
         "addressLocality": "Grimstad",
         "addressCountry": "NO"
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {"@type":"Question","name":"Hvordan kommer vi i gang med en sikkerhetsvurdering?","acceptedAnswer":{"@type":"Answer","text":"Vi starter med en kort kartleggingssamtale, definerer scope og leverer en gjennomgang av nåværende sikkerhetstilstand med konkrete tiltak."}},
-        {"@type":"Question","name":"Hva koster sikkerhetstjenester, og hvordan prises de?","acceptedAnswer":{"@type":"Answer","text":"Engangsvurderinger fra 45 000 kr, retainer fra 25 000 kr/mnd. Endelig pris avhenger av miljø og scope."}},
-        {"@type":"Question","name":"Vi har aldri hatt en sikkerhetsgjennomgang — er det for sent?","acceptedAnswer":{"@type":"Answer","text":"Nei. Vi har hjulpet virksomheter i alle modenhetsnivåer. Det viktigste er å starte med en realistisk basislinje."}},
-        {"@type":"Question","name":"Hva innebærer deteksjonsutvikling egentlig?","acceptedAnswer":{"@type":"Answer","text":"Skreddersydde regler i Sigma/YARA/KQL/SPL, MITRE ATT&CK-mapping og kontinuerlig tuning for å redusere falske positiver."}},
-        {"@type":"Question","name":"Hva gjør vi hvis vi opplever et sikkerhetsbrudd?","acceptedAnswer":{"@type":"Answer","text":"Kontakt vakttelefonen. Vi starter triage, isolerer, samler bevis og koordinerer hendelsen til normalisering."}},
-        {"@type":"Question","name":"Hva skiller ForSec fra andre sikkerhetsselskaper?","acceptedAnswer":{"@type":"Answer","text":"Operatører, ikke konsulenter. 16+ års CERT/SOC-erfaring og leveranser som faktisk integreres i ditt team."}}
-      ]
     }
   ]
 }
@@ -151,10 +140,11 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top" aria-labelledby="hero-title">
+  <canvas class="hero-net" id="heroNet" aria-hidden="true"></canvas>
   <div class="container hero-inner">
     <h1 class="hero-title" id="hero-title">
       <span data-i18n="hero.title.prefix">Vi forsvarer</span><br/>
-      <span class="rotator" id="heroRotator" aria-live="polite">din organisasjon.</span>
+      <span class="rotator" id="heroRotator" aria-live="polite">din organisasjon</span>
     </h1>
     <p class="hero-lede" data-i18n="hero.lede">
       Blue team-spesialister med 16+ års erfaring fra norsk CERT/SOC-drift. Vi bygger deteksjon,
@@ -162,15 +152,9 @@
       konsulenter med rapporter.
     </p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#tjenester" data-i18n="hero.cta1">Se våre tjenester →</a>
+      <a class="btn btn-primary" href="tjenester.html" data-i18n="hero.cta1">Se våre tjenester →</a>
       <a class="btn btn-ghost"   href="om-oss.html" data-i18n="hero.cta2">Om ForSec</a>
     </div>
-
-    <ul class="hero-stats">
-      <li><strong>16+</strong><span data-i18n="hero.stat1">ÅRS ERFARING</span></li>
-      <li><strong>12+</strong><span data-i18n="hero.stat2">ÅR MED CERT/SOC</span></li>
-      <li><strong>4</strong><span   data-i18n="hero.stat3">SOC-MILJØER BYGGET</span></li>
-    </ul>
   </div>
 </section>
 
@@ -178,28 +162,27 @@
 <section class="section section-light" id="om">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="who.eyebrow">— HVEM VI ER —</span>
       <h2 data-i18n="who.title">Eksperter, ikke bare konsulenter</h2>
       <p class="lede" data-i18n="who.lede">16+ års hands-on erfaring fra norsk CERT/SOC-drift. Vi bygger deteksjoner, etterforsker hendelser og herder infrastruktur.</p>
     </div>
 
     <div class="grid grid-3">
-      <article class="service-card reveal" data-num="01">
-        <div class="card-num">01</div>
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></g></svg></div>
         <h3 data-i18n="who.c1.title">Deteksjon og trusseljakt</h3>
         <p data-i18n="who.c1.body">Vi skriver deteksjonsregler, tuner SIEM-plattformer og jakter på trusler i ditt miljø med Sigma, YARA og KQL.</p>
         <a class="card-link" href="blogg.html" data-i18n="common.readmore">Les mer →</a>
       </article>
 
-      <article class="service-card reveal" data-num="02">
-        <div class="card-num">02</div>
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></g></svg></div>
         <h3 data-i18n="who.c2.title">Forensikk og hendelsesrespons</h3>
         <p data-i18n="who.c2.body">Når hendelsen inntreffer, er vi der. Disk-, minne- og nettverksforensikk med bevissinnhenting som holder i retten.</p>
         <a class="card-link" href="blogg.html" data-i18n="common.readmore">Les mer →</a>
       </article>
 
-      <article class="service-card reveal" data-num="03">
-        <div class="card-num">03</div>
+      <article class="service-card reveal">
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></g></svg></div>
         <h3 data-i18n="who.c3.title">Herding og sikkerhetstesting</h3>
         <p data-i18n="who.c3.body">Systematisk herding av servere, AD og sky. Penetrasjonstesting og purple teaming for å finne og lukke hull.</p>
         <a class="card-link" href="blogg.html" data-i18n="common.readmore">Les mer →</a>
@@ -212,28 +195,27 @@
 <section class="section section-tint" id="tjenester">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="core.eyebrow">— KJERNEKOMPETANSE —</span>
       <h2 data-i18n="core.title">Blue team sikkerhetsoperasjoner</h2>
       <p class="lede" data-i18n="core.lede">Tre forsvarspilarer — bygget av operatører som har gjort dette på ordentlig.</p>
     </div>
 
     <div class="grid grid-3">
-      <article class="service-card pillar-card reveal" data-num="01">
-        <div class="card-num">01</div>
+      <article class="service-card pillar-card reveal">
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></g></svg></div>
         <h3 data-i18n="core.c1.title">Deteksjonsutvikling</h3>
         <p data-i18n="core.c1.body">Skreddersydde deteksjonsregler i Sigma, YARA, KQL og SPL. SIEM-tuning, trusseljakt og detection-as-code som fanger reelle trusler — ikke bare støy.</p>
         <a class="card-link" href="tjenester.html" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
       </article>
 
-      <article class="service-card pillar-card reveal" data-num="02">
-        <div class="card-num">02</div>
+      <article class="service-card pillar-card reveal">
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></g></svg></div>
         <h3 data-i18n="core.c2.title">Hendelsesrespons og forensikk</h3>
         <p data-i18n="core.c2.body">Fra første alarm til ferdig rapport. Disk- og minneforensikk, skadevareanalyse, bevissikring og responsavtaler for når minuttene teller.</p>
         <a class="card-link" href="tjenester.html" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
       </article>
 
-      <article class="service-card pillar-card reveal" data-num="03">
-        <div class="card-num">03</div>
+      <article class="service-card pillar-card reveal">
+        <div class="svc-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></g></svg></div>
         <h3 data-i18n="core.c3.title">Herding og vurderinger</h3>
         <p data-i18n="core.c3.body">Penetrasjonstesting, AD-sikkerhetsgjennomgang, sky-sikkerhetsvurdering og systematisk herding. Vi finner hullene og hjelper deg å tette dem.</p>
         <a class="card-link" href="tjenester.html" data-i18n="common.readmoreSvc">Les mer om tjenesten →</a>
@@ -246,8 +228,7 @@
 <section class="section section-light">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="partners.eyebrow">— PÅLITELIGE PARTNERSKAP —</span>
-      <h2 data-i18n="partners.title">Anerkjent av bransjeledere</h2>
+      <h2 data-i18n="partners.title">Partnerskap</h2>
       <p class="lede" data-i18n="partners.lede">Strategiske partnerskap som styrker våre sikkerhetskapabiliteter.</p>
     </div>
 
@@ -287,14 +268,13 @@
 <section class="section section-tint">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="ind.eyebrow">— BRANSJER —</span>
       <h2 data-i18n="ind.title">Vi forsvarer organisasjoner på tvers av sektorer</h2>
       <p class="lede" data-i18n="ind.lede">Hver bransje har unike trusselbilder. Vi bringer operatør-nivå blue team-ekspertise tilpasset din sektor.</p>
     </div>
 
     <div class="grid grid-4">
       <article class="industry-card reveal">
-        <div class="industry-icon">$</div>
+        <div class="industry-icon"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></g></svg></div>
         <h3 data-i18n="ind.i1.title">Finans og bank</h3>
         <p data-i18n="ind.i1.body">Finansinstitusjoner møter sofistikerte trusselaktører som retter seg mot transaksjoner og kundedata.</p>
         <ul>
@@ -305,7 +285,7 @@
       </article>
 
       <article class="industry-card reveal">
-        <div class="industry-icon">+</div>
+        <div class="industry-icon"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 2-3.2 2-5a5 5 0 0 0-9-3 5 5 0 0 0-9 3c0 1.8.5 3.5 2 5l7 7 7-7Z"/></g></svg></div>
         <h3 data-i18n="ind.i2.title">Helse og omsorg</h3>
         <p data-i18n="ind.i2.body">Helsedata er hovedmål. Vi beskytter systemene klinikere er avhengige av daglig.</p>
         <ul>
@@ -316,7 +296,7 @@
       </article>
 
       <article class="industry-card reveal">
-        <div class="industry-icon">⚑</div>
+        <div class="industry-icon"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2 3 7h18l-9-5Z"/></g></svg></div>
         <h3 data-i18n="ind.i3.title">Offentlig sektor</h3>
         <p data-i18n="ind.i3.body">Vi bygde ekspertisen vår inne i norsk offentlig sektor CERT/SOC — vi kjenner dette domenet.</p>
         <ul>
@@ -327,7 +307,7 @@
       </article>
 
       <article class="industry-card reveal">
-        <div class="industry-icon">&lt;/&gt;</div>
+        <div class="industry-icon"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></g></svg></div>
         <h3 data-i18n="ind.i4.title">Teknologi og SaaS</h3>
         <p data-i18n="ind.i4.body">Hurtigvoksende teknologiselskaper trenger sikkerhet som holder tritt med utviklingen.</p>
         <ul>
@@ -340,50 +320,11 @@
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section class="section section-light">
-  <div class="container container-narrow">
-    <div class="section-head">
-      <span class="eyebrow" data-i18n="faq.eyebrow">— OFTEST STILTE SPØRSMÅL —</span>
-      <h2 data-i18n="faq.title">Vanlige spørsmål om IT-sikkerhet</h2>
-      <p class="lede" data-i18n="faq.lede">Svar på det norske virksomheter lurer på om cybersikkerhet og våre tjenester.</p>
-    </div>
-
-    <div class="faq">
-      <details class="faq-item reveal">
-        <summary><span class="faq-question" data-i18n="faq.q1">Hvordan kommer vi i gang med en sikkerhetsvurdering?</span><span class="chevron">▾</span></summary>
-        <div class="faq-body" data-i18n="faq.a1">Vi starter med en kort kartleggingssamtale, definerer scope og leverer en gjennomgang av nåværende sikkerhetstilstand med konkrete tiltak.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary><span class="faq-question" data-i18n="faq.q2">Hva koster sikkerhetstjenester, og hvordan prises de?</span><span class="chevron">▾</span></summary>
-        <div class="faq-body" data-i18n="faq.a2">Engangsvurderinger fra 45 000 kr, retainer fra 25 000 kr/mnd. Endelig pris avhenger av miljø og scope.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary><span class="faq-question" data-i18n="faq.q3">Vi har aldri hatt en sikkerhetsgjennomgang — er det for sent?</span><span class="chevron">▾</span></summary>
-        <div class="faq-body" data-i18n="faq.a3">Nei. Vi har hjulpet virksomheter i alle modenhetsnivåer. Det viktigste er å starte med en realistisk basislinje.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary><span class="faq-question" data-i18n="faq.q4">Hva innebærer deteksjonsutvikling egentlig?</span><span class="chevron">▾</span></summary>
-        <div class="faq-body" data-i18n="faq.a4">Skreddersydde regler i Sigma/YARA/KQL/SPL, MITRE ATT&CK-mapping og kontinuerlig tuning for å redusere falske positiver.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary><span class="faq-question" data-i18n="faq.q5">Hva gjør vi hvis vi opplever et sikkerhetsbrudd?</span><span class="chevron">▾</span></summary>
-        <div class="faq-body" data-i18n="faq.a5">Kontakt vakttelefonen. Vi starter triage, isolerer, samler bevis og koordinerer hendelsen til normalisering.</div>
-      </details>
-      <details class="faq-item reveal">
-        <summary><span class="faq-question" data-i18n="faq.q6">Hva skiller ForSec fra andre sikkerhetsselskaper?</span><span class="chevron">▾</span></summary>
-        <div class="faq-body" data-i18n="faq.a6">Operatører, ikke konsulenter. 16+ års CERT/SOC-erfaring og leveranser som faktisk integreres i ditt team.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
 <!-- ============ BLOG ============ -->
 <section class="section section-tint" id="blogg">
   <div class="container">
     <div class="section-head section-head-row">
       <div>
-        <span class="eyebrow" data-i18n="blog.eyebrow">— SISTE FRA BLOGGEN —</span>
         <h2 data-i18n="blog.title">Innsikt og rådgivning</h2>
       </div>
       <a class="link" href="blogg.html" data-i18n="blog.all">Se alle artikler →</a>
@@ -424,7 +365,6 @@
 <section class="section cta-section" id="kontakt">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow light" data-i18n="cta.eyebrow">— TA KONTAKT —</span>
       <h2 class="light" data-i18n="cta.title">Klar for sterkere forsvar?</h2>
       <p class="lede light" data-i18n="cta.lede">La oss diskutere hvordan vi kan hjelpe å sikre din organisasjon. Innledende samtale er alltid uforpliktende.</p>
     </div>
@@ -452,7 +392,6 @@
         </a>
         <span class="footer-tag" data-i18n="footer.tag">OPERATIV CYBERSIKKERHET</span>
         <p data-i18n="footer.body">Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.</p>
-        <div class="status-pill"><span class="dot"></span><span data-i18n="footer.status">SOC OPERATIVT &nbsp;/&nbsp; 24/7</span></div>
       </div>
 
       <div class="footer-col">

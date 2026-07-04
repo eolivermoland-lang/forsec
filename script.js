@@ -7,16 +7,15 @@ const I18N = {
     'hero.title.prefix':'Vi forsvarer',
     'hero.lede':'Blue team-spesialister med 16+ års erfaring fra norsk CERT/SOC-drift. Vi bygger deteksjon, håndterer hendelser og herder infrastruktur — som en forlengelse av teamet ditt, ikke konsulenter med rapporter.',
     'hero.cta1':'Se våre tjenester →','hero.cta2':'Om ForSec',
-    'hero.stat1':'ÅRS ERFARING','hero.stat2':'ÅR MED CERT/SOC','hero.stat3':'SOC-MILJØER BYGGET',
 
-    'who.eyebrow':'— HVEM VI ER —','who.title':'Eksperter, ikke bare konsulenter',
+    'who.title':'Eksperter, ikke bare konsulenter',
     'who.lede':'16+ års hands-on erfaring fra norsk CERT/SOC-drift. Vi bygger deteksjoner, etterforsker hendelser og herder infrastruktur.',
     'who.c1.title':'Deteksjon og trusseljakt','who.c1.body':'Vi skriver deteksjonsregler, tuner SIEM-plattformer og jakter på trusler i ditt miljø med Sigma, YARA og KQL.','who.c1.chip':'Detection as code',
     'who.c2.title':'Forensikk og hendelsesrespons','who.c2.body':'Når hendelsen inntreffer, er vi der. Disk-, minne- og nettverksforensikk med bevissinnhenting som holder i retten.','who.c2.chip':'Court grade',
     'who.c3.title':'Herding og sikkerhetstesting','who.c3.body':'Systematisk herding av servere, AD og sky. Penetrasjonstesting og purple teaming for å finne og lukke hull.','who.c3.chip1':'Hardening','who.c3.chip2':'Purple team',
     'common.readmore':'Les mer →','common.readmoreSvc':'Les mer om tjenesten →',
 
-    'core.eyebrow':'— KJERNEKOMPETANSE —','core.title':'Blue team sikkerhetsoperasjoner',
+    'core.title':'Blue team sikkerhetsoperasjoner',
     'core.lede':'Tre forsvarspilarer — bygget av operatører som har gjort dette på ordentlig.',
     'core.c1.title':'Deteksjonsutvikling','core.c1.body':'Skreddersydde deteksjonsregler i Sigma, YARA, KQL og SPL. SIEM-tuning, trusseljakt og detection-as-code som fanger reelle trusler — ikke bare støy.',
     'core.c1.l1':'Microsoft Sentinel / Splunk / Elastic','core.c1.l2':'Detection engineering med Git workflows','core.c1.l3':'MITRE ATT&CK mapping per regel',
@@ -25,14 +24,14 @@ const I18N = {
     'core.c3.title':'Herding og vurderinger','core.c3.body':'Penetrasjonstesting, AD-sikkerhetsgjennomgang, sky-sikkerhetsvurdering og systematisk herding. Vi finner hullene og hjelper deg å tette dem.',
     'core.c3.l1':'CIS-benchmarks og NSMs grunnprinsipper','core.c3.l2':'Azure / AWS / GCP sikkerhetsvurdering','core.c3.l3':'Purple team-øvelser',
 
-    'partners.eyebrow':'— PÅLITELIGE PARTNERSKAP —','partners.title':'Anerkjent av bransjeledere',
+    'partners.title':'Partnerskap',
     'partners.lede':'Strategiske partnerskap som styrker våre sikkerhetskapabiliteter.',
     'partners.p1.title':'Microsoft Partner','partners.p1.body':'Beskyttelse på bedriftsnivå med Microsofts skyteknologier og sikkerhetsløsninger.',
     'partners.p1.l1':'Azure sikkerhetsarkitektur og implementering','partners.p1.l2':'Microsoft Defender for Cloud ekspertise','partners.p1.l3':'Sentinel SIEM/SOAR-integrasjon','partners.p1.l4':'Microsoft 365 sikkerhetsoptimalisering',
     'partners.p2.title':'FIRST.org Liaison','partners.p2.body':'Direkte tilknytning til det globale hendelsesresponssamfunnet gjennom FIRST.org-medlemskap.',
     'partners.p2.l1':'Global deling av trusselinformasjon','partners.p2.l2':'Direkte tilknytning til internasjonale sikkerhetsteam','partners.p2.l3':'Tidlig varslingssystem for nye trusler','partners.p2.l4':'Tilgang til hendelsesrespons playbooks og metodikker',
 
-    'ind.eyebrow':'— BRANSJER —','ind.title':'Vi forsvarer organisasjoner på tvers av sektorer','ind.lede':'Hver bransje har unike trusselbilder. Vi bringer operatør-nivå blue team-ekspertise tilpasset din sektor.',
+    'ind.title':'Vi forsvarer organisasjoner på tvers av sektorer','ind.lede':'Hver bransje har unike trusselbilder. Vi bringer operatør-nivå blue team-ekspertise tilpasset din sektor.',
     'ind.i1.title':'Finans og bank','ind.i1.body':'Finansinstitusjoner møter sofistikerte trusselaktører som retter seg mot transaksjoner og kundedata.',
     'ind.i1.l1':'Deteksjonsregler for finanssvindel og innsidertrusler','ind.i1.l2':'Hendelsesrespons for betalingssystemer og handelsplattformer','ind.i1.l3':'Penetrasjonstesting mot SWIFT, DORA og PCI DSS-omfang',
     'ind.i2.title':'Helse og omsorg','ind.i2.body':'Helsedata er hovedmål. Vi beskytter systemene klinikere er avhengige av daglig.',
@@ -42,34 +41,27 @@ const I18N = {
     'ind.i4.title':'Teknologi og SaaS','ind.i4.body':'Hurtigvoksende teknologiselskaper trenger sikkerhet som holder tritt med utviklingen.',
     'ind.i4.l1':'Sky-sikkerhetsvurderinger (Azure, AWS, GCP)','ind.i4.l2':'Container- og Kubernetes-herding','ind.i4.l3':'Purple teaming for SaaS-plattformer og API-er',
 
-    'faq.eyebrow':'— OFTEST STILTE SPØRSMÅL —','faq.title':'Vanlige spørsmål om IT-sikkerhet','faq.lede':'Svar på det norske virksomheter lurer på om cybersikkerhet og våre tjenester.',
-    'faq.q1':'Hvordan kommer vi i gang med en sikkerhetsvurdering?','faq.a1':'Vi starter med en kort kartleggingssamtale, definerer scope og leverer en gjennomgang av nåværende sikkerhetstilstand med konkrete tiltak.',
-    'faq.q2':'Hva koster sikkerhetstjenester, og hvordan prises de?','faq.a2':'Engangsvurderinger fra 45 000 kr, retainer fra 25 000 kr/mnd. Endelig pris avhenger av miljø og scope.',
-    'faq.q3':'Vi har aldri hatt en sikkerhetsgjennomgang — er det for sent?','faq.a3':'Nei. Vi har hjulpet virksomheter i alle modenhetsnivåer. Det viktigste er å starte med en realistisk basislinje.',
-    'faq.q4':'Hva innebærer deteksjonsutvikling egentlig?','faq.a4':'Skreddersydde regler i Sigma/YARA/KQL/SPL, MITRE ATT&CK-mapping og kontinuerlig tuning for å redusere falske positiver.',
-    'faq.q5':'Hva gjør vi hvis vi opplever et sikkerhetsbrudd?','faq.a5':'Kontakt vakttelefonen. Vi starter triage, isolerer, samler bevis og koordinerer hendelsen til normalisering.',
-    'faq.q6':'Hva skiller ForSec fra andre sikkerhetsselskaper?','faq.a6':'Operatører, ikke konsulenter. 16+ års CERT/SOC-erfaring og leveranser som faktisk integreres i ditt team.',
 
-    'blog.eyebrow':'— SISTE FRA BLOGGEN —','blog.title':'Innsikt og rådgivning','blog.all':'Se alle artikler →',
+    'blog.title':'Innsikt og rådgivning','blog.all':'Se alle artikler →',
     'blog.b1.date':'15. FEB','blog.b1.read':'5 min lesetid','blog.b1.title':'NIS2-direktivet: Hva norske virksomheter må vite i 2026','blog.b1.body':'NIS2 stiller strengere krav til cybersikkerhet for kritisk infrastruktur. Her er hva din virksomhet må gjøre for å bli compliant.',
     'blog.b2.date':'28. FEB','blog.b2.read':'6 min lesetid','blog.b2.title':'Ransomware-trender i Norge: Slik beskytter du virksomheten','blog.b2.body':'Ransomware-angrep mot norske virksomheter øker. Lær om de nyeste trendene og konkrete tiltak for å beskytte din organisasjon.','blog.b2.tag':'Sikkerhet',
     'blog.b3.tag':'Hendelsesrespons','blog.b3.date':'1. MARS','blog.b3.read':'7 min lesetid','blog.b3.title':'Slik bygger du en hendelsesresponsplan som faktisk fungerer','blog.b3.body':'En hendelsesresponsplan er verdiløs hvis ingen vet hvordan den brukes. Her er en praktisk guide til å bygge en plan som virker under press.','blog.b3.chip1':'Hendelsesrespons','blog.b3.chip2':'Planlegging',
 
-    'cta.eyebrow':'— TA KONTAKT —','cta.title':'Klar for sterkere forsvar?','cta.lede':'La oss diskutere hvordan vi kan hjelpe å sikre din organisasjon. Innledende samtale er alltid uforpliktende.',
+    'cta.title':'Klar for sterkere forsvar?','cta.lede':'La oss diskutere hvordan vi kan hjelpe å sikre din organisasjon. Innledende samtale er alltid uforpliktende.',
     'cta.btn1':'<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg> Ta kontakt →','cta.t1':'<span aria-hidden="true">★</span> FIRST.ORG MEDLEM','cta.t2':'<span aria-hidden="true">★</span> MICROSOFT PARTNER','cta.t3':'<span aria-hidden="true">★</span> BASERT I NORGE',
 
-    'footer.tag':'OPERATIV CYBERSIKKERHET','footer.body':'Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.','footer.status':'SOC OPERATIVT &nbsp;/&nbsp; 24/7',
+    'footer.tag':'OPERATIV CYBERSIKKERHET','footer.body':'Blue team-spesialister med 16+ års CERT/SOC-erfaring. Deteksjon, respons og herding — bygget av operatører, ikke konsulenter.',
     'footer.h1':'SELSKAP','footer.about':'Om oss','footer.contact':'Kontakt','footer.career':'Karriere','footer.privacy':'Personvern','footer.terms':'Vilkår',
     'footer.h2':'TJENESTER','footer.s1':'Deteksjonsutvikling','footer.s2':'Hendelsesrespons','footer.s3':'Forensikk','footer.s4':'Penetrasjonstesting','footer.s5':'Herding og vurdering',
     'footer.h3':'KONTAKT','footer.addr':'Terje Løvås vei 1<br/>4879 Grimstad, Norge',
     'footer.copy':'© 2026 ForSec AS — Alle rettigheter reservert','footer.orgnr':'Org.nr: 931 208 306','footer.lang.no':'NORSK','footer.lang.en':'ENGLISH',
 
-    'svc.eyebrow':'— VÅRE TJENESTER —','svc.title':'Tjenester','svc.lede':'Teknisk sikkerhet fra operatører med 16+ års erfaring fra norsk CERT/SOC-drift.<br/>Vi bygger, detekterer, responderer og herder.',
+    'svc.title':'Tjenester','svc.lede':'Teknisk sikkerhet fra operatører med 16+ års erfaring fra norsk CERT/SOC-drift.<br/>Vi bygger, detekterer, responderer og herder.',
     'svc.p1.title':'Blue Team & Deteksjonsutvikling','svc.p1.body':'Vi bygger deteksjonskapabiliteter som faktisk fanger reelle trusler. Fra Sigma- og YARA-regler til fullstendige detection-as-code-pipelines — vi designer, implementerer og tuner deteksjonslogikk tilpasset ditt miljø.','svc.p1.target':'For SOC-team og virksomheter som vil bygge eller forbedre sine deteksjonsevner',
     'svc.p2.title':'Digital etterforskning og hendelsesrespons','svc.p2.body':'Når hendelsen inntreffer, teller minuttene. Vi gjennomfører disk-, minne- og nettverksforensikk, sikrer bevis og leverer rapporter som holder i retten. Vi tilbyr også retainer-avtaler for garantert responstid.','svc.p2.target':'For virksomheter som opplever eller vil forberede seg på sikkerhetshendelser',
     'svc.p3.title':'Sikkerhetstesting og sårbarhetsvurdering','svc.p3.body':'Grundig teknisk testing av infrastruktur, applikasjoner og skyløsninger. Vi finner sårbarhetene før angripere gjør det — med konkrete funn og prioriterte anbefalinger.','svc.p3.target':'For virksomheter som vil kjenne sine tekniske svakheter og lukke dem',
 
-    'cat.eyebrow':'— TJENESTEKATALOG —','cat.title':'Alle våre tjenester i detalj','cat.lede':'Konkrete leveranser, tydelig scope, og hvem hver tjeneste passer for.','cat.deliv':'LEVERANSER',
+    'cat.title':'Alle våre tjenester i detalj','cat.lede':'Konkrete leveranser, tydelig scope, og hvem hver tjeneste passer for.','cat.deliv':'LEVERANSER',
     'cat.s1.title':'Deteksjonsutvikling','cat.s1.body':'Strukturert utvikling og forvaltning av deteksjonsregler i din SIEM. Vi designer, koder, tester og dokumenterer regler — og setter opp prosessen for å forvalte dem over tid.','cat.s1.target':'For SOC-team som vil heve deteksjonsmodenheten',
     'cat.s1.l1':'Sigma/YARA/KQL-deteksjonsregler','cat.s1.l2':'SIEM-tuning og optimalisering','cat.s1.l3':'detection-as-code pipeline','cat.s1.l4':'trusseljaktrapporter','cat.s1.l5':'SOC-modenhetsvurdering',
     'cat.s2.title':'Hendelsesrespons og forensikk','cat.s2.body':'Når en hendelse inntreffer leverer vi rask, strukturert respons. Vi gjennomfører digital etterforskning og leverer bevissikret rapport som tåler juridisk granskning.','cat.s2.target':'For virksomheter som trenger akutt eller proaktiv responskapasitet',
@@ -83,25 +75,25 @@ const I18N = {
     'cat.s6.title':'Tabletop-øvelser og trening','cat.s6.body':'Realistiske øvelsesscenarier som tester organisasjonens evne til å håndtere sikkerhetshendelser. Fra ransomware-scenarier for ledelsen til tekniske incident response-drills for SOC-teamet.','cat.s6.target':'For ledelse, styre og sikkerhetsteam som vil øve på realistiske hendelser',
     'cat.s6.l1':'Ransomware-scenario for ledelsen','cat.s6.l2':'teknisk IR-drill for sikkerhetsteam','cat.s6.l3':'krisehåndteringsøvelse','cat.s6.l4':'styrebriefing om cybersikkerhet','cat.s6.l5':'evalueringsrapport med forbedringstiltak',
 
-    'proc.eyebrow':'— SLIK JOBBER VI —','proc.title':'Fra kartlegging til sikkerhet','proc.lede':'En strukturert prosess som gir resultater — uten å forstyrre din daglige drift.',
+    'proc.title':'Fra kartlegging til sikkerhet','proc.lede':'En strukturert prosess som gir resultater — uten å forstyrre din daglige drift.',
     'proc.s1.title':'Kartlegging','proc.s1.body':'Vi starter med å forstå din virksomhet, systemer og risikoeksponering gjennom samtaler og teknisk gjennomgang.',
     'proc.s2.title':'Vurdering','proc.s2.body':'Grundig analyse av sikkerhetsnivå med testing, sårbarhetsskanning og gjennomgang av arkitektur og rutiner.',
     'proc.s3.title':'Rapport og plan','proc.s3.body':'Detaljert rapport med funn, risikorangering og en prioritert handlingsplan med konkrete tiltak.',
     'proc.s4.title':'Implementering','proc.s4.body':'Vi hjelper med å implementere tiltakene — fra konfigurasjonsendringer til oppbygging av deteksjonskapabiliteter.',
 
-    'om.eyebrow':'— OM OSS —','om.title':'Om ForSec','om.lede':'Operatører som bygger forsvar. 16+ års hands-on CERT/SOC-erfaring fra norsk offentlig sektor — nå tilgjengelig for din organisasjon.',
-    'om.bg.eyebrow':'— VÅR BAKGRUNN —','om.bg.title':'Bygget av operatører',
+    'om.title':'Om ForSec','om.lede':'Operatører som bygger forsvar. 16+ års hands-on CERT/SOC-erfaring fra norsk offentlig sektor — nå tilgjengelig for din organisasjon.',
+    'om.bg.title':'Bygget av operatører',
     'om.bg.p1':'ForSec vokste ut av reell drift. Teamet vårt har brukt over et tiår på å bygge og kjøre CERT/SOC-miljøer i norsk offentlig sektor — skrive deteksjonsregler, respondere på hendelser, gjennomføre forensikk og herde infrastruktur under aktive trusler.',
     'om.bg.p2':'Vi startet ForSec fordi vi så for mange organisasjoner få generisk sikkerhetsråd fra konsulenter som aldri har sittet i en SOC. Vi bringer operatør-tankesett: praktisk, teknisk og kamp-testet.',
     'om.stat1':'ÅRS ERFARING','om.stat2':'ÅR CERT/SOC','om.stat3':'SOC-MILJØER BYGGET',
-    'om.team.eyebrow':'— TEAMET —','om.team.title':'Operatørene bak ForSec','om.team.lede':'Folkene som faktisk gjør arbeidet — ikke et salgsteam.',
+    'om.team.title':'Operatørene bak ForSec','om.team.lede':'Folkene som faktisk gjør arbeidet — ikke et salgsteam.',
     'om.team.kim.role':'Principal Security Lead','om.team.kim.bio':'16+ års CERT/SOC-erfaring fra norsk offentlig sektor. Detection engineering, hendelsesrespons og operativ blue team.',
-    'om.val.eyebrow':'— VÅRE VERDIER —','om.val.title':'Slik jobber vi','om.val.lede':'Prinsipp som styrer hver leveranse.',
+    'om.val.title':'Slik jobber vi','om.val.lede':'Prinsipp som styrer hver leveranse.',
     'om.val.v1.title':'Operatør-tankesett','om.val.v1.body':'Vi har sittet i SOC-en under hendelser. Hver anbefaling tar utgangspunkt i hands-on erfaring, ikke teoretiske rammeverk.',
     'om.val.v2.title':'Teknisk dybde','om.val.v2.body':'Vi skriver deteksjonsregler, analyserer malware og herder infrastruktur selv. Ingen sub-leveranse, ingen blackbox.',
     'om.val.v3.title':'Ærlige vurderinger','om.val.v3.body':'Vi forteller deg hva sikkerhetstilstanden faktisk er — ikke hva som er behagelig å høre. Konkrete funn, prioriterte tiltak, null fluff.',
 
-    'bl.eyebrow':'— BLOGG —','bl.title':'Blogg','bl.lede':'Cybersikkerhets-innsikt, trender og veiledning for norske virksomheter.','bl.all':'Alle','bl.read':'Les mer →','bl.tag.regulation':'Regulering',
+    'bl.title':'Blogg','bl.lede':'Cybersikkerhets-innsikt, trender og veiledning for norske virksomheter.','bl.all':'Alle','bl.read':'Les mer →','bl.tag.regulation':'Regulering',
     'bl.a1.title':'NIS2-direktivet: Hva norske virksomheter må vite i 2026','bl.a1.body':'NIS2 stiller strengere krav til cybersikkerhet for kritisk infrastruktur. Her er hva din virksomhet må gjøre for å bli compliant.',
     'bl.a2.title':'Ransomware-trender i Norge: Slik beskytter du virksomheten','bl.a2.body':'Ransomware-angrep mot norske virksomheter øker. Lær om de nyeste trendene og konkrete tiltak for å beskytte din organisasjon.',
     'bl.a3.title':'Slik bygger du en hendelsesresponsplan som faktisk fungerer','bl.a3.body':'En hendelsesresponsplan er verdiløs hvis ingen vet hvordan den brukes. Her er en praktisk guide til å bygge en plan som virker under press.',
@@ -119,7 +111,7 @@ const I18N = {
     'bl.a15.title':'E-postsikkerhet og phishing-forsvar: Defense in depth','bl.a15.body':'E-post er fortsatt angrepsvektor nummer én. Slik bygger du et lag-på-lag-forsvar som fanger phishing før det når brukerne — og håndterer det som slipper gjennom.',
     'bl.a16.title':'SOC-automatisering med SOAR: Playbooks som skalerer teamet','bl.a16.body':'Sikkerhetsteam drukner i manuelle oppgaver. SOAR-playbooks i Sentinel automatiserer det repetitive, slik at analytikere kan fokusere på det som betyr noe.',
 
-    'kt.cta':'Send melding →','kt.eyebrow':'— KONTAKT —','kt.title':'Ta kontakt','kt.lede':'Fortell oss om dine sikkerhetsutfordringer. Vi svarer innen én virkedag.',
+    'kt.cta':'Send melding →','kt.title':'Ta kontakt','kt.lede':'Fortell oss om dine sikkerhetsutfordringer. Vi svarer innen én virkedag.',
     'kt.info.title':'Ta kontakt','kt.info.lede':'Klar for å diskutere sikkerhetsbehovene dine? Ta kontakt når som helst.',
     'kt.phone':'Telefon','kt.email':'E-post','kt.loc':'Lokasjon','kt.addr':'Terje Løvås vei 1<br/>4879 Grimstad, Norge',
     'kt.hours':'Respons','kt.hours.val':'Innen 1 virkedag · 24/7 retainer',
@@ -142,16 +134,15 @@ const I18N = {
     'hero.title.prefix':'We defend',
     'hero.lede':'Blue team specialists with 16+ years of experience from Norwegian CERT/SOC operations. We build detection, handle incidents and harden infrastructure — as an extension of your team, not consultants delivering reports.',
     'hero.cta1':'See our services →','hero.cta2':'About ForSec',
-    'hero.stat1':'YEARS EXPERIENCE','hero.stat2':'YEARS IN CERT/SOC','hero.stat3':'SOC ENVIRONMENTS BUILT',
 
-    'who.eyebrow':'— WHO WE ARE —','who.title':'Experts, not just consultants',
+    'who.title':'Experts, not just consultants',
     'who.lede':'16+ years hands-on experience from Norwegian CERT/SOC operations. We build detections, investigate incidents and harden infrastructure.',
     'who.c1.title':'Detection and threat hunting','who.c1.body':'We write detection rules, tune SIEM platforms and hunt for threats in your environment using Sigma, YARA and KQL.','who.c1.chip':'Detection as code',
     'who.c2.title':'Forensics and incident response','who.c2.body':'When an incident strikes, we are there. Disk, memory and network forensics with evidence collection that holds up in court.','who.c2.chip':'Court grade',
     'who.c3.title':'Hardening and security testing','who.c3.body':'Systematic hardening of servers, AD and cloud. Penetration testing and purple teaming to find and close gaps.','who.c3.chip1':'Hardening','who.c3.chip2':'Purple team',
     'common.readmore':'Read more →','common.readmoreSvc':'Read more about the service →',
 
-    'core.eyebrow':'— CORE COMPETENCE —','core.title':'Blue team security operations',
+    'core.title':'Blue team security operations',
     'core.lede':'Three defensive pillars — built by operators who have done this for real.',
     'core.c1.title':'Detection engineering','core.c1.body':'Tailored detection rules in Sigma, YARA, KQL and SPL. SIEM tuning, threat hunting and detection-as-code that catches real threats — not just noise.',
     'core.c1.l1':'Microsoft Sentinel / Splunk / Elastic','core.c1.l2':'Detection engineering with Git workflows','core.c1.l3':'MITRE ATT&CK mapping per rule',
@@ -160,14 +151,14 @@ const I18N = {
     'core.c3.title':'Hardening and assessments','core.c3.body':'Penetration testing, AD security review, cloud security assessment and systematic hardening. We find the gaps and help you close them.',
     'core.c3.l1':'CIS benchmarks and NSM core principles','core.c3.l2':'Azure / AWS / GCP security assessment','core.c3.l3':'Purple team exercises',
 
-    'partners.eyebrow':'— TRUSTED PARTNERSHIPS —','partners.title':'Recognized by industry leaders',
+    'partners.title':'Partnerships',
     'partners.lede':'Strategic partnerships that strengthen our security capabilities.',
     'partners.p1.title':'Microsoft Partner','partners.p1.body':'Enterprise-grade protection with Microsoft cloud technologies and security solutions.',
     'partners.p1.l1':'Azure security architecture and implementation','partners.p1.l2':'Microsoft Defender for Cloud expertise','partners.p1.l3':'Sentinel SIEM/SOAR integration','partners.p1.l4':'Microsoft 365 security optimization',
     'partners.p2.title':'FIRST.org Liaison','partners.p2.body':'Direct connection to the global incident response community through FIRST.org membership.',
     'partners.p2.l1':'Global threat intelligence sharing','partners.p2.l2':'Direct ties to international security teams','partners.p2.l3':'Early warning system for new threats','partners.p2.l4':'Access to incident response playbooks and methodologies',
 
-    'ind.eyebrow':'— INDUSTRIES —','ind.title':'We defend organizations across sectors','ind.lede':'Every industry has unique threat landscapes. We bring operator-level blue team expertise tailored to your sector.',
+    'ind.title':'We defend organizations across sectors','ind.lede':'Every industry has unique threat landscapes. We bring operator-level blue team expertise tailored to your sector.',
     'ind.i1.title':'Finance and banking','ind.i1.body':'Financial institutions face sophisticated threat actors targeting transactions and customer data.',
     'ind.i1.l1':'Detection rules for financial fraud and insider threats','ind.i1.l2':'Incident response for payment systems and trading platforms','ind.i1.l3':'Penetration testing against SWIFT, DORA and PCI DSS scope',
     'ind.i2.title':'Healthcare','ind.i2.body':'Health data is a prime target. We protect the systems clinicians rely on daily.',
@@ -177,34 +168,27 @@ const I18N = {
     'ind.i4.title':'Technology and SaaS','ind.i4.body':'Fast-growing tech companies need security that keeps pace with development.',
     'ind.i4.l1':'Cloud security assessments (Azure, AWS, GCP)','ind.i4.l2':'Container and Kubernetes hardening','ind.i4.l3':'Purple teaming for SaaS platforms and APIs',
 
-    'faq.eyebrow':'— FREQUENTLY ASKED QUESTIONS —','faq.title':'Common questions about IT security','faq.lede':'Answers to what Norwegian businesses wonder about cybersecurity and our services.',
-    'faq.q1':'How do we get started with a security assessment?','faq.a1':'We start with a short scoping call, define the scope and deliver a review of current security posture with concrete actions.',
-    'faq.q2':'What do security services cost, and how are they priced?','faq.a2':'One-off assessments from NOK 45,000, retainer from NOK 25,000/month. Final price depends on environment and scope.',
-    'faq.q3':'We have never had a security review — is it too late?','faq.a3':'No. We have helped organizations at every maturity level. The important thing is to start with a realistic baseline.',
-    'faq.q4':'What does detection engineering actually involve?','faq.a4':'Tailored rules in Sigma/YARA/KQL/SPL, MITRE ATT&CK mapping and continuous tuning to reduce false positives.',
-    'faq.q5':'What do we do if we experience a security breach?','faq.a5':'Call the on-call line. We start triage, isolate, gather evidence and coordinate the incident through to recovery.',
-    'faq.q6':'What sets ForSec apart from other security companies?','faq.a6':'Operators, not consultants. 16+ years of CERT/SOC experience and deliveries that actually integrate into your team.',
 
-    'blog.eyebrow':'— LATEST FROM THE BLOG —','blog.title':'Insights and advisory','blog.all':'See all articles →',
+    'blog.title':'Insights and advisory','blog.all':'See all articles →',
     'blog.b1.date':'15 FEB','blog.b1.read':'5 min read','blog.b1.title':'The NIS2 directive: What Norwegian businesses must know in 2026','blog.b1.body':'NIS2 raises the bar for cybersecurity for critical infrastructure. Here is what your business must do to become compliant.',
     'blog.b2.date':'28 FEB','blog.b2.read':'6 min read','blog.b2.title':'Ransomware trends in Norway: How to protect your business','blog.b2.body':'Ransomware attacks against Norwegian businesses are increasing. Learn the latest trends and concrete steps to protect your organization.','blog.b2.tag':'Security',
     'blog.b3.tag':'Incident response','blog.b3.date':'1 MAR','blog.b3.read':'7 min read','blog.b3.title':'How to build an incident response plan that actually works','blog.b3.body':'An incident response plan is worthless if no one knows how to use it. Here is a practical guide to building a plan that works under pressure.','blog.b3.chip1':'Incident response','blog.b3.chip2':'Planning',
 
-    'cta.eyebrow':'— CONTACT US —','cta.title':'Ready for stronger defense?','cta.lede':'Let us discuss how we can help secure your organization. An initial conversation is always non-binding.',
+    'cta.title':'Ready for stronger defense?','cta.lede':'Let us discuss how we can help secure your organization. An initial conversation is always non-binding.',
     'cta.btn1':'<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg> Contact us →','cta.t1':'<span aria-hidden="true">★</span> FIRST.ORG MEMBER','cta.t2':'<span aria-hidden="true">★</span> MICROSOFT PARTNER','cta.t3':'<span aria-hidden="true">★</span> BASED IN NORWAY',
 
-    'footer.tag':'OPERATIONAL CYBERSECURITY','footer.body':'Blue team specialists with 16+ years of CERT/SOC experience. Detection, response and hardening — built by operators, not consultants.','footer.status':'SOC OPERATIONAL &nbsp;/&nbsp; 24/7',
+    'footer.tag':'OPERATIONAL CYBERSECURITY','footer.body':'Blue team specialists with 16+ years of CERT/SOC experience. Detection, response and hardening — built by operators, not consultants.',
     'footer.h1':'COMPANY','footer.about':'About','footer.contact':'Contact','footer.career':'Careers','footer.privacy':'Privacy','footer.terms':'Terms',
     'footer.h2':'SERVICES','footer.s1':'Detection engineering','footer.s2':'Incident response','footer.s3':'Forensics','footer.s4':'Penetration testing','footer.s5':'Hardening and assessment',
     'footer.h3':'CONTACT','footer.addr':'Terje Løvås vei 1<br/>4879 Grimstad, Norway',
     'footer.copy':'© 2026 ForSec AS — All rights reserved','footer.orgnr':'Org.no: 931 208 306','footer.lang.no':'NORSK','footer.lang.en':'ENGLISH',
 
-    'svc.eyebrow':'— OUR SERVICES —','svc.title':'Services','svc.lede':'Technical security from operators with 16+ years from Norwegian CERT/SOC operations.<br/>We build, detect, respond and harden.',
+    'svc.title':'Services','svc.lede':'Technical security from operators with 16+ years from Norwegian CERT/SOC operations.<br/>We build, detect, respond and harden.',
     'svc.p1.title':'Blue Team & Detection Engineering','svc.p1.body':'We build detection capabilities that actually catch real threats. From Sigma and YARA rules to full detection-as-code pipelines — we design, implement and tune detection logic tailored to your environment.','svc.p1.target':'For SOC teams and organizations that want to build or improve detection capabilities',
     'svc.p2.title':'Digital forensics and incident response','svc.p2.body':'When an incident strikes, minutes matter. We perform disk, memory and network forensics, preserve evidence and deliver reports that hold up in court. We also offer retainer agreements for guaranteed response time.','svc.p2.target':'For organizations experiencing or preparing for security incidents',
     'svc.p3.title':'Security testing and vulnerability assessment','svc.p3.body':'Thorough technical testing of infrastructure, applications and cloud. We find the vulnerabilities before attackers do — with concrete findings and prioritized recommendations.','svc.p3.target':'For organizations that want to know their technical weaknesses and close them',
 
-    'cat.eyebrow':'— SERVICE CATALOG —','cat.title':'All our services in detail','cat.lede':'Concrete deliverables, clear scope, and who each service fits.','cat.deliv':'DELIVERABLES',
+    'cat.title':'All our services in detail','cat.lede':'Concrete deliverables, clear scope, and who each service fits.','cat.deliv':'DELIVERABLES',
     'cat.s1.title':'Detection engineering','cat.s1.body':'Structured development and management of detection rules in your SIEM. We design, code, test and document rules — and set up the process to maintain them over time.','cat.s1.target':'For SOC teams that want to raise detection maturity',
     'cat.s1.l1':'Sigma/YARA/KQL detection rules','cat.s1.l2':'SIEM tuning and optimization','cat.s1.l3':'detection-as-code pipeline','cat.s1.l4':'threat hunt reports','cat.s1.l5':'SOC maturity assessment',
     'cat.s2.title':'Incident response and forensics','cat.s2.body':'When an incident strikes we deliver fast, structured response. We perform digital forensics and deliver evidence-preserved reports that withstand legal scrutiny.','cat.s2.target':'For organizations needing acute or proactive response capacity',
@@ -218,25 +202,25 @@ const I18N = {
     'cat.s6.title':'Tabletop exercises and training','cat.s6.body':'Realistic exercise scenarios that test your organization\'s ability to handle security incidents. From ransomware scenarios for leadership to technical incident response drills for the SOC team.','cat.s6.target':'For leadership, board and security teams that want to drill realistic incidents',
     'cat.s6.l1':'Ransomware scenario for leadership','cat.s6.l2':'technical IR drill for security teams','cat.s6.l3':'crisis management exercise','cat.s6.l4':'board briefing on cybersecurity','cat.s6.l5':'evaluation report with improvement actions',
 
-    'proc.eyebrow':'— HOW WE WORK —','proc.title':'From discovery to security','proc.lede':'A structured process that delivers results — without disrupting your daily operations.',
+    'proc.title':'From discovery to security','proc.lede':'A structured process that delivers results — without disrupting your daily operations.',
     'proc.s1.title':'Discovery','proc.s1.body':'We start by understanding your business, systems and risk exposure through conversations and technical review.',
     'proc.s2.title':'Assessment','proc.s2.body':'Thorough analysis of security posture with testing, vulnerability scanning and review of architecture and routines.',
     'proc.s3.title':'Report and plan','proc.s3.body':'Detailed report with findings, risk ranking and a prioritized action plan with concrete measures.',
     'proc.s4.title':'Implementation','proc.s4.body':'We help implement the actions — from configuration changes to building detection capabilities.',
 
-    'om.eyebrow':'— ABOUT US —','om.title':'About ForSec','om.lede':'Operators who build defenses. 16+ years of hands-on CERT/SOC experience from Norwegian public sector — now available for your organization.',
-    'om.bg.eyebrow':'— OUR BACKGROUND —','om.bg.title':'Built by operators',
+    'om.title':'About ForSec','om.lede':'Operators who build defenses. 16+ years of hands-on CERT/SOC experience from Norwegian public sector — now available for your organization.',
+    'om.bg.title':'Built by operators',
     'om.bg.p1':'ForSec grew out of real operations. Our team spent over a decade building and running CERT/SOC environments in Norwegian public sector — writing detection rules, responding to incidents, performing forensics, and hardening infrastructure under live threat conditions.',
     'om.bg.p2':'We started ForSec because we saw too many organizations getting generic security advice from consultants who had never sat in a SOC. We bring the operator mindset: practical, technical and battle-tested.',
     'om.stat1':'YEARS EXPERIENCE','om.stat2':'YEARS CERT/SOC','om.stat3':'SOC ENVIRONMENTS BUILT',
-    'om.team.eyebrow':'— THE TEAM —','om.team.title':'The operators behind ForSec','om.team.lede':'The people who actually do the work — not a sales team.',
+    'om.team.title':'The operators behind ForSec','om.team.lede':'The people who actually do the work — not a sales team.',
     'om.team.kim.role':'Principal Security Lead','om.team.kim.bio':'16+ years CERT/SOC experience from Norwegian public sector. Detection engineering, incident response and operational blue team.',
-    'om.val.eyebrow':'— OUR VALUES —','om.val.title':'How we work','om.val.lede':'Principles that govern every delivery.',
+    'om.val.title':'How we work','om.val.lede':'Principles that govern every delivery.',
     'om.val.v1.title':'Operator Mindset','om.val.v1.body':'We have sat in the SOC during incidents. Every recommendation starts from hands-on experience, not theoretical frameworks.',
     'om.val.v2.title':'Technical Depth','om.val.v2.body':'We write detection rules, analyze malware and harden infrastructure ourselves. No sub-delivery, no black box.',
     'om.val.v3.title':'Honest Assessments','om.val.v3.body':'We tell you what the security posture actually looks like — not what is comfortable to hear. Concrete findings, prioritized actions, no fluff.',
 
-    'bl.eyebrow':'— BLOG —','bl.title':'Blog','bl.lede':'Cybersecurity insights, trends and guidance for Norwegian businesses.','bl.all':'All','bl.read':'Read more →','bl.tag.regulation':'Regulation',
+    'bl.title':'Blog','bl.lede':'Cybersecurity insights, trends and guidance for Norwegian businesses.','bl.all':'All','bl.read':'Read more →','bl.tag.regulation':'Regulation',
     'bl.a1.title':'NIS2 Directive: What Norwegian Businesses Need to Know in 2026','bl.a1.body':'NIS2 sets stricter cybersecurity requirements for critical infrastructure. Here is what your organization needs to do to become compliant.',
     'bl.a2.title':'Ransomware Trends in Norway: How to Protect Your Organization','bl.a2.body':'Ransomware attacks on Norwegian businesses are increasing. Learn about the latest trends and concrete measures to protect your organization.',
     'bl.a3.title':'How to Build an Incident Response Plan That Actually Works','bl.a3.body':'An incident response plan is worthless if nobody knows how to use it. Here is a practical guide to building a plan that works under pressure.',
@@ -254,7 +238,7 @@ const I18N = {
     'bl.a15.title':'Email Security and Phishing Defense: Defense in Depth','bl.a15.body':'Email remains attack vector number one. Here is how to build a layered defense that catches phishing before it reaches users — and handles what gets through.',
     'bl.a16.title':'SOC Automation with SOAR: Playbooks That Scale Your Security Team','bl.a16.body':'Security teams drown in manual tasks. SOAR playbooks in Sentinel automate the repetitive, so analysts can focus on what matters.',
 
-    'kt.cta':'Send message →','kt.eyebrow':'— CONTACT —','kt.title':'Contact Us','kt.lede':'Tell us about your security challenges. We respond within one business day.',
+    'kt.cta':'Send message →','kt.title':'Contact Us','kt.lede':'Tell us about your security challenges. We respond within one business day.',
     'kt.info.title':'Contact Us','kt.info.lede':'Ready to discuss your security needs? Reach out anytime.',
     'kt.phone':'Phone','kt.email':'Email','kt.loc':'Location','kt.addr':'Terje Løvås vei 1<br/>4879 Grimstad, Norway',
     'kt.hours':'Response','kt.hours.val':'Within 1 business day · 24/7 retainer',
@@ -279,8 +263,8 @@ if ('IntersectionObserver' in window) {
 
 // ===================== Hero rotator (declared early — applyLang depends on it) =====================
 const ROTATOR_WORDS = {
-  no: ['din organisasjon.','ditt nettverk.','din infrastruktur.'],
-  en: ['your organization.','your network.','your infrastructure.']
+  no: ['din organisasjon','ditt nettverk','din infrastruktur'],
+  en: ['your organization','your network','your infrastructure']
 };
 const heroRotator = document.getElementById('heroRotator');
 let rotIdx = 0;
@@ -391,23 +375,9 @@ try {
 const root = document.documentElement;
 const themeBtn = document.getElementById('themeToggle');
 
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) root.dataset.theme = savedTheme;
-else if (window.matchMedia('(prefers-color-scheme: dark)').matches) root.dataset.theme = 'dark';
-
-themeBtn?.addEventListener('click', () => {
-  const isDark = root.dataset.theme === 'dark';
-  root.dataset.theme = isDark ? 'light' : 'dark';
-  localStorage.setItem('theme', root.dataset.theme);
-});
-
-// ===================== FAQ accordion (one open) =====================
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-  item.addEventListener('toggle', () => {
-    if (item.open) faqItems.forEach(o => { if (o !== item) o.open = false; });
-  });
-});
+// Light mode only — ignore saved/system pref, no dark toggle
+root.dataset.theme = 'light';
+localStorage.removeItem('theme');
 
 // ===================== Active nav on scroll =====================
 const ids = ['top','tjenester','om','blogg','kontakt'];
@@ -468,17 +438,6 @@ if (filterMore && blogFilter) {
     filterMore.setAttribute('aria-expanded', expanded ? 'true' : 'false');
   });
 }
-
-// ===================== Magnetic-ish button tilt =====================
-document.querySelectorAll('.btn-primary').forEach(btn => {
-  btn.addEventListener('mousemove', e => {
-    const r = btn.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width  - .5) * 8;
-    const y = ((e.clientY - r.top)  / r.height - .5) * 6;
-    btn.style.transform = `translate(${x}px, ${-2 + y}px)`;
-  });
-  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-});
 
 // ===================== Mobile nav (hamburger + drawer) =====================
 (function () {
@@ -722,4 +681,87 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
     const a = e.target.closest && e.target.closest('a[href]');
     if (eligible(a)) prefetch(resolve(a));
   }, { passive: true });
+})();
+
+// ===================== Hero: interactive particle network =====================
+(function () {
+  const canvas = document.getElementById('heroNet');
+  if (!canvas || prefersReducedMotion.matches) return;
+
+  const ctx = canvas.getContext('2d');
+  const hero = canvas.parentElement;
+  const LINK_DIST = 130;          // px — max distance to draw a line
+  const MOUSE_DIST = 160;         // px — mouse influence radius
+  const dots = [];
+  let w = 0, h = 0, dpr = 1, running = true;
+  const mouse = { x: -9999, y: -9999 };
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = hero.clientWidth; h = hero.clientHeight;
+    canvas.width = w * dpr; canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const target = Math.min(90, Math.round(w * h / 16000)); // density cap
+    while (dots.length < target) dots.push(spawn());
+    dots.length = target;
+  }
+  function spawn() {
+    return { x: Math.random() * w, y: Math.random() * h,
+             vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 };
+  }
+
+  hero.addEventListener('mousemove', e => {
+    const r = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+  });
+  hero.addEventListener('mouseleave', () => { mouse.x = mouse.y = -9999; });
+
+  function tick() {
+    if (!running) return;
+    ctx.clearRect(0, 0, w, h);
+    for (const d of dots) {
+      // gentle pull toward cursor
+      const mdx = mouse.x - d.x, mdy = mouse.y - d.y;
+      const md = Math.hypot(mdx, mdy);
+      if (md < MOUSE_DIST && md > 1) { d.vx += mdx / md * .012; d.vy += mdy / md * .012; }
+      d.vx = Math.max(-.6, Math.min(.6, d.vx));
+      d.vy = Math.max(-.6, Math.min(.6, d.vy));
+      d.x += d.vx; d.y += d.vy;
+      if (d.x < 0 || d.x > w) d.vx *= -1;
+      if (d.y < 0 || d.y > h) d.vy *= -1;
+    }
+    for (let i = 0; i < dots.length; i++) {
+      const a = dots[i];
+      for (let j = i + 1; j < dots.length; j++) {
+        const b = dots[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < LINK_DIST) {
+          ctx.strokeStyle = `rgba(13,103,181,${.30 * (1 - dist / LINK_DIST)})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      // node — brighter near cursor
+      const md = Math.hypot(mouse.x - a.x, mouse.y - a.y);
+      const near = md < MOUSE_DIST;
+      ctx.fillStyle = near ? "rgba(13,103,181,.85)" : "rgba(13,103,181,.55)";
+      ctx.beginPath(); ctx.arc(a.x, a.y, near ? 3.4 : 2.6, 0, Math.PI * 2); ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // pause off-screen / hidden tab
+  new IntersectionObserver(([e]) => {
+    const was = running; running = e.isIntersecting && !document.hidden;
+    if (running && !was) tick();
+  }).observe(hero);
+  document.addEventListener('visibilitychange', () => {
+    const was = running; running = !document.hidden;
+    if (running && !was) tick();
+  });
+
+  window.addEventListener('resize', resize);
+  resize();
+  tick();
 })();
